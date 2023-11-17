@@ -11,7 +11,7 @@ import json
 import os
 from dotenv import load_dotenv
 
-
+from create_database import SpotifyDB
 
 load_dotenv()
 
@@ -89,7 +89,7 @@ def get_user_tracks():
                 tracks.append(track)
 
             url = js["next"]
-            url = None # FOR TESTING
+            url = None # XXX
         else:
             url = None
 
@@ -97,6 +97,9 @@ def get_user_tracks():
 
 @app.route('/get_track_data')
 def get_track_data():
+    # connect to database
+    db = SpotifyDB()
+
     # API only accepts max 100 tracks at a time
     start = 0
     end = 100
@@ -122,13 +125,35 @@ def get_track_data():
             js = r.json()
             for feature in js["audio_features"]:
                 track_id = feature["id"]
-                print(track_id + " : name: " + track_data[track_id])
+                print("adding: "+ track_id + " : name: " + track_data[track_id])
+
                 # Add to database!
+                db.insert_track(
+                    feature["acousticness"],
+                    feature["analysis_url"],
+                    feature["danceability"],
+                    feature["duration_ms"],
+                    feature["energy"],
+                    track_id,
+                    feature["instrumentalness"],
+                    feature["key"],
+                    feature["liveness"],
+                    feature["loudness"],
+                    feature["mode"],
+                    track_data[track_id],
+                    feature["speechiness"],
+                    feature["tempo"],
+                    feature["time_signature"],
+                    feature["track_href"],
+                    feature["type"],
+                    feature["uri"],
+                    feature["valence"]
+                )
                 
 
             start = end
             end += 100
-            start = size    # FOR TESTING
+            start = size    # XXX
         else: 
             start = size
 
@@ -144,4 +169,3 @@ print("running")
 if __name__ == '__main__':
     app.run(port=3000)
     print("flask response deployed")
-item["track"]["id"]

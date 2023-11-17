@@ -5,6 +5,6 @@ Basic scripts to load all of a user's saved songs into a database
 
 To do:
 Error handling on API responses
-Handling Flask server shutdown
-Browser control with Selenium (if closing tabs or windows is needed)
+Error handling for sql responses
 Front end for allowing user to create playlists
+Cleaning up flask endpoints to only appropriate endpoints
