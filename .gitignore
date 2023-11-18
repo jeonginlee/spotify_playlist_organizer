@@ -1,5 +1,4 @@
 *.swp
 spotify_env
-*env
 .cache
 __py*
