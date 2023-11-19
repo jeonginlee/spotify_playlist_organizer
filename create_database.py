@@ -68,7 +68,9 @@ class SpotifyDB(object):
                 "PRIMARY KEY(ID)"\
             ")";
 
+            print("Creating table: " + table_name)
             self.cursor.execute(command);
+            self.con
 
         print("Connected successfully!")
 
@@ -86,14 +88,26 @@ class SpotifyDB(object):
                 id,instrumentalness,music_key,liveness,loudness,mode,name,
                 speechiness,tempo,time_signature,track_href,type,uri,valence)
             VALUES
-                ({acousticness},{analysis_url},{danceability},{duration_ms},{energy},
-                {id},{instrumentalness},{music_key},{liveness},{loudness},{mode},{name},
-                {speechiness},{tempo},{time_signature},{track_href},{type},{uri},{valence})
+                ({acousticness},"{analysis_url}",{danceability},{duration_ms},{energy},
+                %s,{instrumentalness},{music_key},{liveness},{loudness},{mode},%s,
+                {speechiness},{tempo},{time_signature},%s,%s,%s,{valence});
         """
 
-
         print("Executing command: "+command)
-        self.cursor.execute(command)
+        self.cursor.execute(command, [ID,name,track_href,TYPE,uri])
+        self.con.commit()
+
+    # XXX
+    def cleanup(self):
+        try:
+            print("Cleaning up database")
+            self.cursor.execute("DROP DATABASE spotify;")
+            print("commiting")
+            self.con.commit()
+        except:
+            print("Error occurred during cleanup")
+
+
 
 if __name__ == '__main__':
    db = SpotifyDB() 

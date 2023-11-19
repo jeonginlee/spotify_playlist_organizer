@@ -89,7 +89,7 @@ def get_user_tracks():
                 tracks.append(track)
 
             url = js["next"]
-            url = None # XXX
+            #url = None #XXX
         else:
             url = None
 
@@ -149,16 +149,20 @@ def get_track_data():
                     feature["uri"],
                     feature["valence"]
                 )
-                
 
             start = end
             end += 100
-            start = size    # XXX
         else: 
             start = size
 
-
     return str(len(tracks))
+
+# XXX USED FOR TESTING
+@app.route('/cleanup')
+def cleanup():
+    db = SpotifyDB()
+    db.cleanup()
+    return "Database cleaned up"
 
 @app.route('/shutdown')
 def shutdown():
