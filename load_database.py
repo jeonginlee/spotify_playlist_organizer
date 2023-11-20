@@ -12,6 +12,7 @@ import os
 from dotenv import load_dotenv
 
 from create_database import SpotifyDB
+from track import Track
 
 load_dotenv()
 
@@ -73,23 +74,25 @@ def get_token():
 
 @app.route('/get_user_tracks')
 def get_user_tracks():
-    global tracks
+    global tracks,artists
     
     url = spotify_url+"/me/tracks?limit=50&offset=0"
 
-    # Populate list of track ids
     tracks = []
+    artists = {}
     while(url):
         print("Making request to " + url + " for user tracks")
         r = requests.get(url,headers=headers)
         if(r.ok):
             js = r.json()
             for item in js["items"]:
-                track = (item["track"]["id"], item["track"]["name"])
+                track = Track(item["track"]["id"], item["track"]["name"], item["track"]["artists"])
                 tracks.append(track)
+                for artist in item["track"]["artists"]:
+                    artists[artist["id"]] = artist
 
             url = js["next"]
-            #url = None #XXX
+            url = None #XXX
         else:
             url = None
 
@@ -108,11 +111,11 @@ def get_track_data():
         url =spotify_url + "/audio-features"
         ids = ""
         track_ids = []
-        track_data = {} # dictionary to keep track of name
+        track_data = {} # dictionary to map ids to Track object
 
         for track in tracks[start:end]:
-            track_ids.append(track[0]) 
-            track_data[track[0]] = track[1]
+            track_ids.append(track.ID) 
+            track_data[track.ID] = track
 
         params = {
             "ids": ",".join(track_ids)
@@ -124,8 +127,10 @@ def get_track_data():
         if(r.ok): 
             js = r.json()
             for feature in js["audio_features"]:
-                track_id = feature["id"]
-                print("adding: "+ track_id + " : name: " + track_data[track_id])
+                track = track_data[feature["id"]
+                print("adding: "+ track.ID + " : name: " + track.name)
+
+                # XXX need to get artist and genre info and add it to database
 
                 # Add to database!
                 db.insert_track(
@@ -134,13 +139,13 @@ def get_track_data():
                     feature["danceability"],
                     feature["duration_ms"],
                     feature["energy"],
-                    track_id,
+                    track.ID,
                     feature["instrumentalness"],
                     feature["key"],
                     feature["liveness"],
                     feature["loudness"],
                     feature["mode"],
-                    track_data[track_id],
+                    track.name,
                     feature["speechiness"],
                     feature["tempo"],
                     feature["time_signature"],
@@ -152,6 +157,8 @@ def get_track_data():
 
             start = end
             end += 100
+            #XXX
+            start = size
         else: 
             start = size
 
