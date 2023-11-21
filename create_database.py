@@ -7,15 +7,6 @@ database_name = "spotify"
 table_name = "tracks"
 
 
-# Connect to database and return cursor
-def get_connector():
-    return mysql.connector.connect(
-        host = host,
-        user = user,
-        password = password,
-        database = database_name
-    )
-
 class SpotifyDB(object):
     def __init__(self):
         print("Connecting to "+host+": "+database_name+" as "+user)
@@ -25,7 +16,7 @@ class SpotifyDB(object):
             if self.con.is_connected():
                 self.cursor = self.con.cursor()
         except:
-            print("Building database: "+database_name)
+            print("Building database: " + database_name)
             # Connect to server and create database
             mydb = mysql.connector.connect(
                 host = host, user = user,
@@ -78,6 +69,17 @@ class SpotifyDB(object):
         print("Closing connection")
         if hasattr(self, "con"):    # self.con not set if connection failed
             self.con.close()
+
+    # Connect to database and return cursor
+    def __get_database():
+        return mysql.connector.connect(
+            host = host,
+            user = user,
+            password = password,
+            database = database_name
+        )
+
+
 
     def insert_track(self,acousticness,analysis_url,danceability,duration_ms,energy,
                 ID,instrumentalness,music_key,liveness,loudness,mode,name,

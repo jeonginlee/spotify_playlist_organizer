@@ -3,3 +3,5 @@ spotify_env
 .cache
 __py*
 .env
+*.csv
+
