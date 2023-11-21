@@ -11,7 +11,7 @@ import json
 import os
 from dotenv import load_dotenv
 
-from create_database import SpotifyDB
+from database import SpotifyDB
 from track import Track
 
 load_dotenv()
@@ -89,6 +89,7 @@ def get_user_tracks():
                 track = Track(item["track"]["id"], item["track"]["name"], item["track"]["artists"])
                 tracks.append(track)
                 for artist in item["track"]["artists"]:
+                    print(artist.keys())
                     artists[artist["id"]] = artist
 
             url = js["next"]
@@ -127,7 +128,7 @@ def get_track_data():
         if(r.ok): 
             js = r.json()
             for feature in js["audio_features"]:
-                track = track_data[feature["id"]
+                track = track_data[feature["id"]]
                 print("adding: "+ track.ID + " : name: " + track.name)
 
                 # XXX need to get artist and genre info and add it to database
