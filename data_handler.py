@@ -2,7 +2,10 @@ from track import Track
 
 class DataHandler(object):
     def __init__(self):
+# XXX turn this into dict? can i still iterate through to create list for getTracksId
         self.tracks = []
+        
+        # XXX turn this into new Artist object
         self.artists = {}
 
     # Takes in a track object from spotify API response to keep track of 
@@ -10,6 +13,13 @@ class DataHandler(object):
     def addTrack(self, trackObj):
         track = Track(trackObj["id"], trackObj["name"], trackObj["artists"])
         self.tracks.append(track)
+
+        # XXX
+        # will the Artist object that gets added here be shared between the
+        # references? Track holds Artist, and it also lives here
+        # if so, we can leave the references, and use the list of Artists to
+        # generate query for spotify API to load genres for all Artists
+
         for artist in track.artists:
             self.artists[artist["id"]] = artist
 

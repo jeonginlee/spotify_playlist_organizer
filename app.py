@@ -72,9 +72,7 @@ def get_token(auth_code):
 
 @app.route('/get_user_tracks')
 def get_user_tracks():
-    
     url = spotify_url+"/me/tracks?limit=50&offset=0"
-
     while(url):
         print("Making request to " + url + " for user tracks")
         r = requests.get(url,headers=headers)
@@ -91,7 +89,7 @@ def get_user_tracks():
 
 @app.route('/get_track_data')
 def get_track_data():
-    url =spotify_url + "/audio-features"
+    url = spotify_url + "/audio-features"
     section = 1
     while(1):
         ids,names = data.getTrackIds(section)
@@ -110,7 +108,10 @@ def get_track_data():
                 Id = feature["id"]
                 print("adding: "+ Id + " : name: " + names[Id])
 
-                # XXX need to get artist and genre info and add it to database
+                # need to know genres for each artist by now
+                # should do this in between the end of get_user_tracks and here
+                # might be easiest to query for this data from handler by Id 
+                # to return name and list of genres
 
                 # Add to database!
                 db.insert_track(
