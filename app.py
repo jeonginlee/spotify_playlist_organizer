@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, url_for
 
 # for browser control and making requests
 import webbrowser
@@ -12,7 +12,7 @@ import os
 from dotenv import load_dotenv
 
 from database import SpotifyDB
-from track import Track
+from data_handler import DataHandler
 
 load_dotenv()
 
@@ -36,17 +36,15 @@ webbrowser.open(auth_url + urlencode(auth_headers))
 
 # Starting Flask app to listen to authenication response
 app = Flask(__name__)
+db = SpotifyDB()
+data = DataHandler()
 
 @app.route('/callback')
 def callback():
-    global auth_code
-    auth_code = request.args.get("code") 
-    print(auth_code)
+    return redirect(url_for('get_token', auth_code=request.args.get("code")))
 
-    return redirect("/token")
-
-@app.route('/token')
-def get_token():
+@app.route('/token/<auth_code>')
+def get_token(auth_code):
     global token,refresh_token,headers
     encoded_credentials = base64.b64encode(client_id.encode() + b':' + client_secret.encode()).decode("utf-8") 
     token_headers = {
@@ -70,56 +68,37 @@ def get_token():
         }
         print("Token retrieved: " + token)
 
-    return redirect('/get_user_tracks')
+    return redirect(url_for('get_user_tracks'))
 
 @app.route('/get_user_tracks')
 def get_user_tracks():
-    global tracks,artists
     
     url = spotify_url+"/me/tracks?limit=50&offset=0"
 
-    tracks = []
-    artists = {}
     while(url):
         print("Making request to " + url + " for user tracks")
         r = requests.get(url,headers=headers)
         if(r.ok):
             js = r.json()
             for item in js["items"]:
-                track = Track(item["track"]["id"], item["track"]["name"], item["track"]["artists"])
-                tracks.append(track)
-                for artist in item["track"]["artists"]:
-                    print(artist.keys())
-                    artists[artist["id"]] = artist
-
+                data.addTrack(item["track"])
             url = js["next"]
             url = None #XXX
         else:
             url = None
 
-    return redirect('/get_track_data')
+    return redirect(url_for('get_track_data'))
 
 @app.route('/get_track_data')
 def get_track_data():
-    # connect to database
-    db = SpotifyDB()
-
-    # API only accepts max 100 tracks at a time
-    start = 0
-    end = 100
-    size = len(tracks)
-    while(start < size):
-        url =spotify_url + "/audio-features"
-        ids = ""
-        track_ids = []
-        track_data = {} # dictionary to map ids to Track object
-
-        for track in tracks[start:end]:
-            track_ids.append(track.ID) 
-            track_data[track.ID] = track
+    url =spotify_url + "/audio-features"
+    section = 1
+    while(1):
+        ids,names = data.getTrackIds(section)
+        if ids == None: break # end of data
 
         params = {
-            "ids": ",".join(track_ids)
+            "ids": ids
         }
 
         print("Making request to " + url + " for track data")
@@ -128,8 +107,8 @@ def get_track_data():
         if(r.ok): 
             js = r.json()
             for feature in js["audio_features"]:
-                track = track_data[feature["id"]]
-                print("adding: "+ track.ID + " : name: " + track.name)
+                Id = feature["id"]
+                print("adding: "+ Id + " : name: " + names[Id])
 
                 # XXX need to get artist and genre info and add it to database
 
@@ -140,13 +119,13 @@ def get_track_data():
                     feature["danceability"],
                     feature["duration_ms"],
                     feature["energy"],
-                    track.ID,
+                    Id,
                     feature["instrumentalness"],
                     feature["key"],
                     feature["liveness"],
                     feature["loudness"],
                     feature["mode"],
-                    track.name,
+                    names[Id],
                     feature["speechiness"],
                     feature["tempo"],
                     feature["time_signature"],
@@ -156,19 +135,16 @@ def get_track_data():
                     feature["valence"]
                 )
 
-            start = end
-            end += 100
-            #XXX
-            start = size
+            section += 1
+            break;    #XXX
         else: 
-            start = size
-
-    return str(len(tracks))
+            print("Request failed")
+            break;
+    return "hi"
 
 # XXX USED FOR TESTING
 @app.route('/cleanup')
 def cleanup():
-    db = SpotifyDB()
     db.cleanup()
     return "Database cleaned up"
 
@@ -177,7 +153,6 @@ def shutdown():
     os._exit(0)
     return ""
 
-print("running")
 if __name__ == '__main__':
+    print("Deploying Flask...")
     app.run(port=3000)
-    print("flask response deployed")
