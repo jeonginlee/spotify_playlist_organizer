@@ -41,10 +41,10 @@ data = DataHandler()
 
 @app.route('/callback')
 def callback():
-    return redirect(url_for('get_token', auth_code=request.args.get("code")))
+    return redirect(url_for('getToken', auth_code=request.args.get("code")))
 
 @app.route('/token/<auth_code>')
-def get_token(auth_code):
+def getToken(auth_code):
     global token,refresh_token,headers
     encoded_credentials = base64.b64encode(client_id.encode() + b':' + client_secret.encode()).decode("utf-8") 
     token_headers = {
@@ -68,65 +68,76 @@ def get_token(auth_code):
         }
         print("Token retrieved: " + token)
 
-    return redirect(url_for('get_user_tracks'))
+    return redirect(url_for('getUserTracks'))
 
-@app.route('/get_user_tracks')
-def get_user_tracks():
-    url = spotify_url+"/me/tracks?limit=50&offset=0"
+@app.route('/getUserTracks')
+def getUserTracks():
+    url = spotify_url + "/me/tracks?limit=50&offset=0"
     while(url):
-        print("Making request to " + url + " for user tracks")
-        r = requests.get(url,headers=headers)
-        if(r.ok):
-            js = r.json()
-            for item in js["items"]:
+        response = makeRequest(url)
+        if response != None:
+            for item in response["items"]:
                 data.addTrack(item["track"])
-            url = js["next"]
+            url = response["next"]
             url = None #XXX
         else:
             url = None
 
-    return redirect(url_for('get_track_data'))
+    print("User tracks loaded")
+    return redirect(url_for('getArtistGenres'))
 
-@app.route('/get_track_data')
-def get_track_data():
-    url = spotify_url + "/audio-features"
+@app.route('/getArtistGenres')
+def getArtistGenres():
+    url = spotify_url + '/artists'
     section = 1
     while(1):
-        ids,names = data.getTrackIds(section)
+        ids, genres = data.getArtistInfo(section)
         if ids == None: break # end of data
 
-        params = {
-            "ids": ids
-        }
+        print(ids)
 
-        print("Making request to " + url + " for track data")
-        r = requests.get(url, params = params, headers=headers)
+        response = makeRequest(url, ids)
+        if response != None:
+            # Add artist, genre and mapping to database
+            #XXX
+            for artist in response["artists"]:
+                print("artist: " + artist["name"])
+                print("     genre: " + ",".join(artist["genres"]))
 
-        if(r.ok): 
-            js = r.json()
-            for feature in js["audio_features"]:
+            section += 1
+            break #XXX
+        else:
+            break
+
+    print("Artist data loaded")
+    #XXX return redirect(url_for('getTrackData'))
+    return "test"
+
+@app.route('/getTrackData')
+def getTrackData():
+    url = spotify_url + '/audio-features'
+    section = 1
+    while(1):
+        ids,names = data.getTrackInfo(section)
+        if ids == None: break # end of data
+
+        response = makeRequest(url, ids)
+        if response != None: 
+            for feature in response["audio_features"]:
                 Id = feature["id"]
-                print("adding: "+ Id + " : name: " + names[Id])
-
-                # need to know genres for each artist by now
-                # should do this in between the end of get_user_tracks and here
-                # might be easiest to query for this data from handler by Id 
-                # to return name and list of genres
-
-                # Add to database!
                 db.insert_track(
                     feature["acousticness"],
                     feature["analysis_url"],
                     feature["danceability"],
                     feature["duration_ms"],
                     feature["energy"],
-                    Id,
+                    feature["id"],
                     feature["instrumentalness"],
                     feature["key"],
                     feature["liveness"],
                     feature["loudness"],
                     feature["mode"],
-                    names[Id],
+                    names[feature["id"]],
                     feature["speechiness"],
                     feature["tempo"],
                     feature["time_signature"],
@@ -137,10 +148,10 @@ def get_track_data():
                 )
 
             section += 1
-            break;    #XXX
+            break    #XXX
         else: 
-            print("Request failed")
-            break;
+            break
+    print("Track data loaded")
     return "hi"
 
 # XXX USED FOR TESTING
@@ -153,6 +164,23 @@ def cleanup():
 def shutdown():
     os._exit(0)
     return ""
+
+# Helper function to make requests to API
+#   returns json data, None if request failed
+def makeRequest(url, ids=None):
+
+    print("Making request to " + url)
+    if ids == None: r = requests.get(url, headers=headers)
+    else: 
+        params = { "ids": ids }
+        r = requests.get(url, params = params, headers=headers)
+
+    if r.ok:
+        return r.json()
+    else:
+        print("Request failed for url: " + url)
+        print("\t" + json.dumps(r.json()))
+        return None
 
 if __name__ == '__main__':
     print("Deploying Flask...")

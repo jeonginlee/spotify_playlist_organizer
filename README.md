@@ -10,11 +10,15 @@ To load the project locally:
 	-> mysql -u root -p
 
 	-> source C:/Users/jeong/projects/spotify_playlist_organizer/create_tables.sql
+
 3. Run main module
 
 
 
 To do:
+priority:
+add artist data to database
+misc:
 Error handling on API responses
 Error handling for sql responses
 Sanitizing sql parameters
@@ -26,3 +30,5 @@ Move up lifetime of database connection to avoid reconnecting all the time (not
     needed yet)
 Flask controllers to organize endpoints? Is this needed for a project of this
     size/scope?
+
+Cleanup use of camelcase vs _

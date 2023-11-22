@@ -39,9 +39,13 @@ class SpotifyDB(object):
                 {speechiness},{tempo},{time_signature},%s,%s,%s,{valence});
         """
 
-        print("Executing command: "+command)
-        self.cursor.execute(command, [ID,name,track_href,TYPE,uri])
-        self.con.commit()
+#XXX        print("Executing command: "+command)
+        try:
+            self.cursor.execute(command, [ID,name,track_href,TYPE,uri])
+            self.con.commit()
+        except Exception as e:
+            print("Error adding " + name + " to database: ")
+            print(e)
 
     # XXX
     def cleanup(self):
