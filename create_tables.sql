@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS genres (
 	PRIMARY KEY (name)
 );
 
-CREATE TABLE IF NOT EXISTS artistsToGenre (
-	artistId INT NOT NULL,
+CREATE TABLE IF NOT EXISTS artistToGenre (
+	artistId varchar(255) NOT NULL,
 	genre varchar(255) NOT NULL,
 	CONSTRAINT PK_artistsToGenre PRIMARY KEY (artistId, genre)
 );

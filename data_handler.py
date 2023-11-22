@@ -14,10 +14,7 @@ class DataHandler(object):
         for artist in track.artists:
             self.artists[artist.Id] = artist
 
-    # Sections are 1 indexed, returns None if beyond size of track array
-    # Returns a tuple
-    #   First: comma deliminated string of artist Ids in the 50 artist section
-    #   Second: map of ids to list of genres
+    # Returns a comma deliminated string of artist Ids in the 50 artist section
     #   Sections are 1 indexed, returns None if beyond size of track array
     def getArtistInfo(self, section):
         start = (section-1)*50
@@ -27,17 +24,20 @@ class DataHandler(object):
         
         artistIds = list(self.artists.keys())[start:start+50]
 
-        artistGenres = {}
-        for Id in artistIds:
-            artistGenres[Id] = self.artists[Id].genres
+        # XXX just realized that this function is called to get ids to get the
+        # genre info. might not need to keep track of genre since its getting
+        # loaded to the database immediately
+       # artistGenres = {}
+       # for Id in artistIds:
+       #     artistGenres[Id] = self.artists[Id].genres
 
-        return ",".join(artistIds), artistGenres
+        return ",".join(artistIds)
 
 
-    # Sections are 1 indexed, returns None if beyond size of track array
     # Returns a tuple 
     #   First: comma deliminated string of track Ids in the 100 track section
     #   Second: map of ids to track name
+    #   Sections are 1 indexed, returns None if beyond size of track array
     def getTrackInfo(self, section):  
         start = (section-1)*100
         size = len(self.tracks)

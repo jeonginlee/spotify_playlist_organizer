@@ -25,8 +25,8 @@ class SpotifyDB(object):
         if hasattr(self, "con"):    # self.con not set if connection failed
             self.con.close()
 
-    def insert_track(self,acousticness,analysis_url,danceability,duration_ms,energy,
-                ID,instrumentalness,music_key,liveness,loudness,mode,name,
+    def insertTrack(self,acousticness,analysis_url,danceability,duration_ms,energy,
+                Id,instrumentalness,music_key,liveness,loudness,mode,name,
                 speechiness,tempo,time_signature,track_href,TYPE,uri,valence):
         command = f"""
             INSERT INTO tracks
@@ -39,20 +39,78 @@ class SpotifyDB(object):
                 {speechiness},{tempo},{time_signature},%s,%s,%s,{valence});
         """
 
-#XXX        print("Executing command: "+command)
         try:
-            self.cursor.execute(command, [ID,name,track_href,TYPE,uri])
+            self.cursor.execute(command, [Id,name,track_href,TYPE,uri])
             self.con.commit()
         except Exception as e:
-            print("Error adding " + name + " to database: ")
+       #     print("Error adding track " + name + " to database: ")
+       #     print(e)
+            print("1")
+
+    def insertArtist(self,Id,name,href):
+        command = f"""
+            INSERT INTO artists
+                (id,name,href)
+            VALUES
+                (%s,%s,%s)
+        """
+        try:
+            self.cursor.execute(command, [Id,name,href])
+            self.con.commit()
+        except Exception as e:
+            #print("Error adding artist " + name + " to database:")
+            #print(e)
+            print("1")
+
+    def insertGenre(self,name):
+        command = f"""
+            INSERT INTO genres
+                (name)
+            VALUES 
+                (%s)
+        """
+        
+        try:
+            self.cursor.execute(command, [name])
+            self.con.commit()
+        except Exception as e:
+            #print("Error adding genre " + name + " to database:")
+            #print(e)
+            print("1")
+
+    def insertArtistGenre(self,artistId,genre):
+        command = f"""
+            INSERT INTO artistToGenre
+                (artistId,genre)
+            VALUES
+                (%s,%s)
+        """
+        print("inserting mapping")
+        print("artist ID: " + artistId)
+        print("genre: " + genre)
+        
+        try:
+            self.cursor.execute(command, [artistId,genre])
+            self.con.commit()
+        except Exception as e:
+            print("Error adding mapping for " + artistId + " to " + genre)
             print(e)
 
-    # XXX
-    def cleanup(self):
+
+    def __cleanup(self):
+        print("Cleaning up database")
+        command = """
+            USE spotify;
+            DELETE FROM artistToGenre;
+            DELETE FROM artists;
+            DELETE FROM tracks;
+            DELETE FROM genres;
+        """
         try:
-            print("Cleaning up database")
-            self.cursor.execute("DROP DATABASE spotify;")
-            print("commiting")
+            for result in self.cursor.execute(command, multi=True):
+                pass
             self.con.commit()
-        except:
-            print("Error occurred during cleanup")
+        except Exception as e:
+            print("Error cleaning up database:")
+            print(e)
+         

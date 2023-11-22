@@ -91,18 +91,17 @@ def getArtistGenres():
     url = spotify_url + '/artists'
     section = 1
     while(1):
-        ids, genres = data.getArtistInfo(section)
+        ids = data.getArtistInfo(section)
         if ids == None: break # end of data
-
-        print(ids)
 
         response = makeRequest(url, ids)
         if response != None:
             # Add artist, genre and mapping to database
-            #XXX
             for artist in response["artists"]:
-                print("artist: " + artist["name"])
-                print("     genre: " + ",".join(artist["genres"]))
+                db.insertArtist(artist["id"],artist["name"],artist["href"])
+                for genre in artist["genres"]:
+                    db.insertGenre(genre)
+                    db.insertArtistGenre(artist["id"],genre)
 
             section += 1
             break #XXX
@@ -110,8 +109,7 @@ def getArtistGenres():
             break
 
     print("Artist data loaded")
-    #XXX return redirect(url_for('getTrackData'))
-    return "test"
+    return redirect(url_for('getTrackData'))
 
 @app.route('/getTrackData')
 def getTrackData():
@@ -125,7 +123,7 @@ def getTrackData():
         if response != None: 
             for feature in response["audio_features"]:
                 Id = feature["id"]
-                db.insert_track(
+                db.insertTrack(
                     feature["acousticness"],
                     feature["analysis_url"],
                     feature["danceability"],
@@ -157,7 +155,7 @@ def getTrackData():
 # XXX USED FOR TESTING
 @app.route('/cleanup')
 def cleanup():
-    db.cleanup()
+    db.__cleanup()
     return "Database cleaned up"
 
 @app.route('/shutdown')
