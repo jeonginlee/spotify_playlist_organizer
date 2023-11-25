@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 
 from database import SpotifyDB
 from data_handler import DataHandler
+import objects
 
 load_dotenv()
 
@@ -79,7 +80,6 @@ def getUserTracks():
             for item in response["items"]:
                 data.addTrack(item["track"])
             url = response["next"]
-            url = None #XXX
         else:
             url = None
 
@@ -91,20 +91,20 @@ def getArtistGenres():
     url = spotify_url + '/artists'
     section = 1
     while(1):
-        ids = data.getArtistInfo(section)
+        ids = data.getArtistIds(section)
         if ids == None: break # end of data
 
         response = makeRequest(url, ids)
         if response != None:
             # Add artist, genre and mapping to database
             for artist in response["artists"]:
+                data.addArtistGenres(artist["id"], artist["genres"])
                 db.insertArtist(artist["id"],artist["name"],artist["href"])
                 for genre in artist["genres"]:
                     db.insertGenre(genre)
-                    db.insertArtistGenre(artist["id"],genre)
+                    db.insertArtistToGenre(artist["name"],genre)
 
             section += 1
-            break #XXX
         else:
             break
 
@@ -116,26 +116,28 @@ def getTrackData():
     url = spotify_url + '/audio-features'
     section = 1
     while(1):
-        ids,names = data.getTrackInfo(section)
+        ids = data.getTrackIds(section)
         if ids == None: break # end of data
 
         response = makeRequest(url, ids)
         if response != None: 
             for feature in response["audio_features"]:
                 Id = feature["id"]
+                track = data.getTrackObj(Id)
+
                 db.insertTrack(
                     feature["acousticness"],
                     feature["analysis_url"],
                     feature["danceability"],
                     feature["duration_ms"],
                     feature["energy"],
-                    feature["id"],
+                    Id,
                     feature["instrumentalness"],
                     feature["key"],
                     feature["liveness"],
                     feature["loudness"],
                     feature["mode"],
-                    names[feature["id"]],
+                    track.name,
                     feature["speechiness"],
                     feature["tempo"],
                     feature["time_signature"],
@@ -145,8 +147,10 @@ def getTrackData():
                     feature["valence"]
                 )
 
+                for genre in track.getGenres():
+                    db.insertTrackToGenre(track.name, genre)
+
             section += 1
-            break    #XXX
         else: 
             break
     print("Track data loaded")
@@ -155,7 +159,7 @@ def getTrackData():
 # XXX USED FOR TESTING
 @app.route('/cleanup')
 def cleanup():
-    db.__cleanup()
+    db.cleanup()
     return "Database cleaned up"
 
 @app.route('/shutdown')
@@ -178,6 +182,7 @@ def makeRequest(url, ids=None):
     else:
         print("Request failed for url: " + url)
         print("\t" + json.dumps(r.json()))
+        print("ids: " + ids)
         return None
 
 if __name__ == '__main__':

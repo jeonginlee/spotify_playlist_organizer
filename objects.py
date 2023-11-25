@@ -3,10 +3,11 @@ class Artist(object):
     def __init__(self, Id, name):
         self.Id = Id
         self.name = name
-#        self.genres = []
-#    def addGenres(self):
-#        for genre in genres:
-#            self.genres.append(genre)
+        self.genres = []
+
+    def addGenres(self,genres):
+        for genre in genres:
+            self.genres.append(genre)
 
 class Track(object):
     def __init__(self, Id, name, artists):
@@ -16,10 +17,10 @@ class Track(object):
         for artist in artists:
             self.artists.append(Artist(artist["id"], artist["name"]))
         
-    #def getGenres():
-    #    genres = []
-    #    for artist in self.artists:
-    #        for genre in artist.genres:
-    #            genres.append(genre)
+    def getGenres(self):
+        genres = []
+        for artist in self.artists:
+            for genre in artist.genres:
+                genres.append(genre)
 
-    #    return genres
+        return genres

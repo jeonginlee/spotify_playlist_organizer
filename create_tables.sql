@@ -27,18 +27,24 @@ CREATE TABLE IF NOT EXISTS tracks (
 
 CREATE TABLE IF NOT EXISTS artists (
 	id varchar(255) NOT NULL,
-	name varchar(255),
+	name varchar(255) NOT NULL,
 	href varchar(255),
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS genres (
-	name varchar(255) NOT NULL,
-	PRIMARY KEY (name)
+	genre varchar(255) NOT NULL,
+	PRIMARY KEY (genre)
 );
 
 CREATE TABLE IF NOT EXISTS artistToGenre (
-	artistId varchar(255) NOT NULL,
+	name varchar(255) NOT NULL,
 	genre varchar(255) NOT NULL,
-	CONSTRAINT PK_artistsToGenre PRIMARY KEY (artistId, genre)
+	CONSTRAINT PK_artistsToGenre PRIMARY KEY (name, genre)
+);
+
+CREATE TABLE IF NOT EXISTS trackToGenre (
+	name varchar(255) NOT NULL,
+	genre varchar(255) NOT NULL,
+	CONSTRAINT PK_trackToGenre PRIMARY KEY (name, genre)
 );

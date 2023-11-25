@@ -43,9 +43,9 @@ class SpotifyDB(object):
             self.cursor.execute(command, [Id,name,track_href,TYPE,uri])
             self.con.commit()
         except Exception as e:
-       #     print("Error adding track " + name + " to database: ")
-       #     print(e)
-            print("1")
+            if e.args[0] != 1062:   # duplicate entry
+                print("Error adding track " + name + " to database: ")
+                print(e)
 
     def insertArtist(self,Id,name,href):
         command = f"""
@@ -58,46 +58,57 @@ class SpotifyDB(object):
             self.cursor.execute(command, [Id,name,href])
             self.con.commit()
         except Exception as e:
-            #print("Error adding artist " + name + " to database:")
-            #print(e)
-            print("1")
+            if e.args[0] != 1062:   # duplicate entry
+                print("Error adding artist " + name + " to database:")
+                print(e)
 
-    def insertGenre(self,name):
+    def insertGenre(self,genre):
         command = f"""
             INSERT INTO genres
-                (name)
+                (genre)
             VALUES 
                 (%s)
         """
-        
         try:
-            self.cursor.execute(command, [name])
+            self.cursor.execute(command, [genre])
             self.con.commit()
         except Exception as e:
-            #print("Error adding genre " + name + " to database:")
-            #print(e)
-            print("1")
+            if e.args[0] != 1062:   # duplicate entry
+                print("Error adding genre " + genre + " to database:")
+                print(e)
 
-    def insertArtistGenre(self,artistId,genre):
+    def insertArtistToGenre(self,name,genre):
         command = f"""
             INSERT INTO artistToGenre
-                (artistId,genre)
+                (name,genre)
             VALUES
                 (%s,%s)
         """
-        print("inserting mapping")
-        print("artist ID: " + artistId)
-        print("genre: " + genre)
-        
         try:
-            self.cursor.execute(command, [artistId,genre])
+            self.cursor.execute(command, [name,genre])
             self.con.commit()
         except Exception as e:
-            print("Error adding mapping for " + artistId + " to " + genre)
-            print(e)
+            if e.args[0] != 1062:   # duplicate entry
+                print("Error adding mapping for artist " + name + " to " + genre)
+                print(e)
+
+    def insertTrackToGenre(self,name,genre):
+        command = f"""
+            INSERT INTO trackToGenre
+                (name,genre)
+            VALUES
+                (%s,%s)
+        """
+        try:
+            self.cursor.execute(command, [name,genre])
+            self.con.commit()
+        except Exception as e:
+            if e.args[0] != 1062:   # duplicate entry
+                print("Error adding mapping for track " + name + " to " + genre)
+                print(e)
 
 
-    def __cleanup(self):
+    def cleanup(self):
         print("Cleaning up database")
         command = """
             USE spotify;
@@ -110,6 +121,7 @@ class SpotifyDB(object):
             for result in self.cursor.execute(command, multi=True):
                 pass
             self.con.commit()
+            print("Database cleaned up")
         except Exception as e:
             print("Error cleaning up database:")
             print(e)
