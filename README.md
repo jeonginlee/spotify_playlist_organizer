@@ -46,10 +46,9 @@ Chrome settings -> Privacy and Security -> See all data and permissions -> searc
 ## To do:
 
 ### Priority:
-
+Make dummy account and transfer songs through Postman
 
 ### Misc:
-
 Error handling on API responses
 
 Error handling for sql responses
