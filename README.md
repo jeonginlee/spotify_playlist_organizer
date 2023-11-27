@@ -48,6 +48,8 @@ Chrome settings -> Privacy and Security -> See all data and permissions -> searc
 ### Priority:
 Make dummy account and transfer songs through Postman
 
+Add Riley in user management in spotify app dashboard
+
 ### Misc:
 Error handling on API responses
 
