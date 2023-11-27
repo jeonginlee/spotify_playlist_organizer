@@ -1,32 +1,39 @@
 # spotify_playlist_organizer
+Description:
+TODO
 
-Dependencies:
-MySQL
-
-To load the project locally:
-1. Open up to project directory
-2. Create database and tables
+Project Setup:
+1. Clone project repository:
+    a. git clone https://github.com/jeonginlee/spotify_playlist_organizer.git <project name>
+2. Install Python: https://www.python.org/downloads/
+3. Open up to project directory
+4. Using [virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) to manage environment and packages
+    a. Setup: py -m venv spotify_env
+    b. Activate: spotify_env/Scripts/activate
+    b. Install packages: pip install Flask requests python-dotenv mysql-connector-python 
+5. Install [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing.html)
+6. Setup connection to database with name "localhost" and user/password "root"
+7. Create database and tables
 	-> mysql -u root -p
-	-> source C:/Users/jeong/projects/spotify_playlist_organizer/create_tables.sql
-3. Run main module
+        -> password: root
+    -> source <path to create_table.sql>
+	    ex: source C:/Users/jeong/projects/spotify_playlist_organizer/create_tables.sql
+8. Run main module for Flask
     py app.py
+9. Navigate to "http://localhost:3000/" to start authorization workflow
+
+Authorization managed through [Spotify Web API services](https://developer.spotify.com/documentation/web-api/tutorials/code-flow)
+Cookies are used for reauthorization so you may need to clear it to retrigger authorization if needed
+    Chrome settings -> Privacy and Security -> See all data and permissions -> search for Spotify and delete cookies
 
 
 
+
+---------------------------------------------------------------------------
 To do:
 priority:
-add artist data to database
+
 misc:
 Error handling on API responses
 Error handling for sql responses
-Sanitizing sql parameters
-Front end for allowing user to create playlists
-Cleaning up flask endpoints to only appropriate endpoints
-Clean up branch use so that main is the clean version! use different
-    branches while working between machines
-Move up lifetime of database connection to avoid reconnecting all the time (not
-    needed yet)
-Flask controllers to organize endpoints? Is this needed for a project of this
-    size/scope?
-
-Cleanup use of camelcase vs _
+Flask controllers to organize endpoints

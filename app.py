@@ -1,13 +1,11 @@
 from flask import Flask, request, redirect, url_for
 
-# for browser control and making requests
-import webbrowser
 import requests
 from urllib.parse import urlencode
 import base64
 import json
 
-# controlling process and loading environment vars
+# controlling process and loading environment variables
 import os
 from dotenv import load_dotenv
 
@@ -15,6 +13,7 @@ from database import SpotifyDB
 from data_handler import DataHandler
 import objects
 
+# Setting globals
 load_dotenv()
 
 client_id = os.getenv("CLIENT_ID")
@@ -25,20 +24,20 @@ auth_url = "http://accounts.spotify.com/authorize?"
 token_url = "https://accounts.spotify.com/api/token"
 spotify_url = "https://api.spotify.com/v1"      # leading url for spotify API
 
-# Opening browser for user authorization
-auth_headers = {
-    "client_id": client_id,
-    "response_type": "code",
-    "redirect_uri": callback_url,
-    "scope": "user-library-read"
-}
-
-webbrowser.open(auth_url + urlencode(auth_headers))
-
-# Starting Flask app to listen to authenication response
 app = Flask(__name__)
 db = SpotifyDB()
 data = DataHandler()
+
+# Authorization endpoints -----------------------------------------------------
+@app.route('/')
+def start():
+    auth_headers = {
+        "client_id": client_id,
+        "response_type": "code",
+        "redirect_uri": callback_url,
+        "scope": "user-library-read"
+    }
+    return redirect(auth_url + urlencode(auth_headers))
 
 @app.route('/callback')
 def callback():
@@ -71,6 +70,7 @@ def getToken(auth_code):
 
     return redirect(url_for('getUserTracks'))
 
+# Data endpoints --------------------------------------------------------------
 @app.route('/getUserTracks')
 def getUserTracks():
     url = spotify_url + "/me/tracks?limit=50&offset=0"
@@ -80,6 +80,7 @@ def getUserTracks():
             for item in response["items"]:
                 data.addTrack(item["track"])
             url = response["next"]
+            url = None
         else:
             url = None
 
@@ -105,6 +106,7 @@ def getArtistGenres():
                     db.insertArtistToGenre(artist["name"],genre)
 
             section += 1
+            break
         else:
             break
 
@@ -155,20 +157,9 @@ def getTrackData():
             break
     print("Track data loaded")
     return "hi"
+# Helper functions --------------------------------------------------------
 
-# XXX USED FOR TESTING
-@app.route('/cleanup')
-def cleanup():
-    db.cleanup()
-    return "Database cleaned up"
-
-@app.route('/shutdown')
-def shutdown():
-    os._exit(0)
-    return ""
-
-# Helper function to make requests to API
-#   returns json data, None if request failed
+# Returns json data, None if request failed
 def makeRequest(url, ids=None):
 
     print("Making request to " + url)
@@ -185,6 +176,19 @@ def makeRequest(url, ids=None):
         print("ids: " + ids)
         return None
 
+
+# USED FOR TESTING ---------------------------------------------------------
+@app.route('/cleanup')
+def cleanup():
+    db.cleanup()
+    return "Database cleaned up"
+
+@app.route('/shutdown')
+def shutdown():
+    os._exit(0)
+    return ""
+
+# Main deployment -------------------------------------------------------------
 if __name__ == '__main__':
     print("Deploying Flask...")
     app.run(port=3000)
