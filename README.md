@@ -1,12 +1,12 @@
 # spotify_playlist_organizer
-Description:
+#Description:
 TODO
 
-Project Setup:
+#Project Setup:
 1. Clone project repository:
-
-    a. git clone https://github.com/jeonginlee/spotify_playlist_organizer.git <project name>
-
+'''
+git clone https://github.com/jeonginlee/spotify_playlist_organizer.git <project name>
+'''
 2. Install Python: https://www.python.org/downloads/
 3. Open up to project directory
 4. Using [virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) to manage environment and packages
@@ -42,12 +42,12 @@ Cookies are used for reauthorization so you may need to clear it to retrigger au
 
 
 ---------------------------------------------------------------------------
-To do:
+##To do:
 
-priority:
+###priority:
 
 
-misc:
+###misc:
 
 Error handling on API responses
 
