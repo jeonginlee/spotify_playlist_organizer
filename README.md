@@ -21,7 +21,7 @@ git clone https://github.com/jeonginlee/spotify_playlist_organizer.git <project 
     ```
     b. Install packages: 
     ```
-    pip install Flask requests python-dotenv mysql-connector-python 
+    pip install -r requirements.txt
     ```
 5. Install [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing.html)
 6. Setup connection to database with name "localhost" and user/password "root"
