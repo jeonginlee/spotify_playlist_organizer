@@ -56,3 +56,6 @@ Error handling on API responses
 Error handling for sql responses
 
 Flask controllers to organize endpoints
+
+Group API requests, maybe using graphQL?
+
