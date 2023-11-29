@@ -1,4 +1,4 @@
-from objects import Track, Artist
+from model.model import Track, Artist
 
 class DataHandler(object):
     def __init__(self):

@@ -1,6 +1,8 @@
 from flask import Flask
 import controllers
 
+import webbrowser
+
 app = Flask(__name__)
 
 app.register_blueprint(controllers.authorize, url_prefix='/authorize')
@@ -9,5 +11,7 @@ app.register_blueprint(controllers.services, url_prefix='/services')
 
 # Main deployment -------------------------------------------------------------
 if __name__ == '__main__':
+    webbrowser.open('http://localhost:3000/authorize') # Make it easier for development
+
     print("Deploying Flask...")
     app.run(port=3000)
