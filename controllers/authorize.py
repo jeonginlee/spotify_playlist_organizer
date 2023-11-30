@@ -18,9 +18,10 @@ auth_url = "http://accounts.spotify.com/authorize?"
 token_url = "https://accounts.spotify.com/api/token"
 
 # Authorize endpoints -------------------------------------------------------
-authorize = Blueprint('authorize', __name__, url_prefix='/authorize')
+authorize = Blueprint('authorize', __name__, template_folder="templates", url_prefix='/authorize')
 @authorize.route('/')
 def start():
+    print("starting")
     auth_headers = {
         "client_id": client_id,
         "response_type": "code",

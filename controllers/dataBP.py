@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint, redirect, url_for, render_template
 import requests
 import json
 from model.database import SpotifyDB 
@@ -11,7 +11,7 @@ dataHandler = DataHandler()
 spotify_url = "https://api.spotify.com/v1"      # leading url for spotify API
 
 # Data endpoints --------------------------------------------------------------
-dataBP = Blueprint('dataBP', __name__, url_prefix='/data')
+dataBP = Blueprint('dataBP', __name__, template_folder="templates", url_prefix='/data')
 @dataBP.route('/setToken/<auth_token>')
 def setToken(auth_token):
     global token
@@ -103,7 +103,8 @@ def getTrackData():
         else: 
             break
     print("Track data loaded")
-    return "hi"
+    print(str(len(dataHandler.tracks)) + " loaded")
+    return render_template("home.html", numTracks=len(dataHandler.tracks))
 # Helper functions --------------------------------------------------------
 
 # Returns json data, None if request failed

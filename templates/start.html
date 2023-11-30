@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="container p-5 my-5 bg-dark text-white">
+		<h1>Your Spotify is a fucking mess.</h1>
+		<p>Maybe you can clean it up here?</p>
+		<a class="btn btn-outline-light btn-lg" role="button"
+			href="{{ url_for("authorize.start") }}">
+					Fine let's get started...
+		</a>
+	
+	</div>
+
+{% endblock %}
