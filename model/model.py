@@ -23,3 +23,8 @@ class Track(object):
                 genres.append(genre)
 
         return genres
+
+class Playlist(object):
+    def __init__(self, Id, name):
+        self.Id = Id
+        self.name = name

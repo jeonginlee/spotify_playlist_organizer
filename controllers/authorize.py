@@ -22,11 +22,12 @@ authorize = Blueprint('authorize', __name__, template_folder="templates", url_pr
 @authorize.route('/')
 def start():
     print("starting")
+    scope = "user-library-read playlist-read-private"
     auth_headers = {
         "client_id": client_id,
         "response_type": "code",
         "redirect_uri": callback_url,
-        "scope": "user-library-read"
+        "scope": scope
     }
     return redirect(auth_url + urlencode(auth_headers))
 

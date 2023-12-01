@@ -1,0 +1,23 @@
+Basic Design outline for front end UI
+
+Objective:
+Assist user in organizing large libaries of songs into playlists
+
+User needs:
+. Browse catalog of songs
+. Create playlists based on data points available from API
+. Generate playlists by search criteria
+. Smart generation of group of playlists from libary of songs
+
+Workflow:
+1. User greeted at home page (instructions for how to use this app?)
+2. Log in using authentication or automatically logged in
+3. Choose playlist or songs to load into database
+4. Auto generate playlists
+5. Review and modify resulting playlists and add each desired one to library
+6. Log out
+
+
+Out of scope (future enhancements):
+. Sampling songs from app for ease
+. Adding songs into database from online Spotify catalog

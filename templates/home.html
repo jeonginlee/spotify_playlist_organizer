@@ -2,9 +2,13 @@
 {% block content %}
 
 	<div class="container p-5 my-5 bg-dark text-white">
-		<h3>Your library has been loaded.</h3>
-		<p>We found {{numTracks}} songs in your liked playlist.</p>
+		<h3>How would you like to get started?</h3>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<a class="btn btn-outline-light btn-lg" role="button"
+				href="{{ url_for("dataBP.getTracks", playlistId="User") }}">Get my liked songs</a>
+			<a class="btn btn-outline-light btn-lg" role="button"
+				href="{{ url_for("dataBP.getPlaylists") }}">Pick from my playlists</a>
+		</div>
 	</div>
-	
 
 {% endblock %}

@@ -55,7 +55,8 @@ Error handling on API responses
 
 Error handling for sql responses
 
-Flask controllers to organize endpoints
-
 Group API requests, maybe using graphQL?
+	Or at least progress bar for user while requests are being sent
 
+Need to organize dataBP endpoints into controllers with responsibilities that
+make sense

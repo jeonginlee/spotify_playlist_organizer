@@ -16,18 +16,37 @@ dataBP = Blueprint('dataBP', __name__, template_folder="templates", url_prefix='
 def setToken(auth_token):
     global token
     token = auth_token
-    return redirect(url_for('dataBP.getUserTracks'))
+    return render_template('home.html')
 
-@dataBP.route('/getUserTracks')
-def getUserTracks():
-    url = spotify_url + "/me/tracks?limit=50&offset=0"
+@dataBP.route('/getPlaylists')
+def getPlaylists():
+    url = spotify_url + "/me/playlists?limit=50&offset=0"
+    while(url):
+        response = makeRequest(url)
+        if response != None:
+            for item in response["items"]:
+                dataHandler.addPlaylist(item["id"], item["name"])
+            url = response["next"]
+        else:
+            url = None
+
+    print("Playlists loaded")
+    return render_template('playlists.html', playlists=dataHandler.getPlaylists())
+
+# Will get user liked songs if playlist query parameter is missing
+@dataBP.route('/getTracks/<playlistId>')
+def getTracks(playlistId):
+    if playlistId != "User":
+        print("searching for playlist " + playlistId)
+        url = spotify_url + "/playlists/" + playlistId + "/tracks?limit=50&offset=0"
+    else:
+        url = spotify_url + "/me/tracks?limit=50&offset=0"
     while(url):
         response = makeRequest(url)
         if response != None:
             for item in response["items"]:
                 dataHandler.addTrack(item["track"])
             url = response["next"]
-            url = None
         else:
             url = None
 
@@ -102,9 +121,8 @@ def getTrackData():
             section += 1
         else: 
             break
-    print("Track data loaded")
-    print(str(len(dataHandler.tracks)) + " loaded")
-    return render_template("home.html", numTracks=len(dataHandler.tracks))
+    print(str(dataHandler.getNumTracks()) + " songs loaded")
+    return render_template("loaded.html", numTracks=dataHandler.getNumTracks())
 # Helper functions --------------------------------------------------------
 
 # Returns json data, None if request failed

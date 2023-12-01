@@ -1,9 +1,10 @@
-from model.model import Track, Artist
+from model.model import *
 
 class DataHandler(object):
     def __init__(self):
         self.tracks = {}
         self.artists = {}
+        self.playlists = {}
 
     # Takes in a track object from spotify API response to keep track of 
     #    added tracks and their artsists
@@ -29,6 +30,9 @@ class DataHandler(object):
     def getTrackObj(self, Id):
         return self.tracks[Id]
 
+    def getNumTracks(self):
+        return len(self.tracks)
+
     # Updates Artist object with genre info 
     def addArtistGenres(self, artistId, genres):
         if self.artists[artistId] != None:
@@ -45,4 +49,9 @@ class DataHandler(object):
         artistIds = list(self.artists.keys())[start:start+50]
         return ",".join(artistIds)
 
-    
+    def addPlaylist(self, Id, name):
+        self.playlists[Id] = Playlist(Id, name)
+
+    # Returns a list of playlist objects
+    def getPlaylists(self):
+        return self.playlists.values()
