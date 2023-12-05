@@ -23,7 +23,7 @@ git clone https://github.com/jeonginlee/spotify_playlist_organizer.git <project 
     ```
     pip install -r requirements.txt
     ```
-5. Install [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing.html)
+5. Install [MySQL Server](https://dev.mysql.com/downloads/mysql/). [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing.html) can also be downloaded for ease during development. 
 6. Setup connection to database with name "localhost" and user/password "root"
 7. Create database and tables
     ```
