@@ -60,3 +60,6 @@ Group API requests, maybe using graphQL?
 
 Need to organize dataBP endpoints into controllers with responsibilities that
 make sense
+
+Clean up duplicate code in database.py (passing sql command/error message and
+arg list as parameter?)

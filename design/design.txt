@@ -14,10 +14,35 @@ Workflow:
 2. Log in using authentication or automatically logged in
 3. Choose playlist or songs to load into database
 4. Auto generate playlists
+	a. Start with seed artist, track, genre
 5. Review and modify resulting playlists and add each desired one to library
 6. Log out
+
+
+Design:
+The meat and bones of the project is generating playlists from a given library. 
+The first method of identifying similar songs is vector/cosine similarity
+analysis, using the various data points we have for each track.
+
+Since the range of possible values for many of the data points is from 0-1, the
+cosine range will be limited in range as well. 
+
+The first idea for to account for this limited range is to calculate
+different cosine values for different sets of data points. For example, data
+points like danceability and energy are more related and relevant for track
+similarity than speechiness and valence. Intelligent grouping of data points to
+compare will yield better results.
+	- What about using Euclidean distance instead? Would this be more accurate
+	  for how different values are actually?
+		. On the assumption that two very different data points can have a
+		cosine of 1 yet the values for each data point are simply amplified. 
 
 
 Out of scope (future enhancements):
 . Sampling songs from app for ease
 . Adding songs into database from online Spotify catalog
+. Create playlists that include every song in library
+. Introduce songs from user library to add to existing playlist
+. Calculate track similarity based on analyzing "mood" or "color" of the track
+and comparing to other tracks with similar color (music -> color)
+(https://hackernoon.com/how-to-use-machine-learning-to-color-your-lighting-based-on-music-mood-bi163u8l)
