@@ -2,4 +2,4 @@
 spotify_env
 .cache
 __py*
-
+*.csv

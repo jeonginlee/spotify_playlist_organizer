@@ -66,9 +66,9 @@ def getArtistGenres():
             # Add artist, genre and mapping to database
             for artist in response["artists"]:
                 dataHandler.addArtistGenres(artist["id"], artist["genres"])
-                db.insertArtist(artist["id"],artist["name"],artist["href"])
+                db.insertArtists(artist["id"],artist["name"],artist["href"])
                 for genre in artist["genres"]:
-                    db.insertGenre(genre)
+                    db.insertGenres(genre)
                     db.insertArtistToGenre(artist["name"],genre)
 
             section += 1
@@ -93,7 +93,7 @@ def getTrackData():
                 Id = feature["id"]
                 track = dataHandler.getTrackObj(Id)
 
-                db.insertTrack(
+                db.insertTracks(
                     feature["acousticness"],
                     feature["analysis_url"],
                     feature["danceability"],
