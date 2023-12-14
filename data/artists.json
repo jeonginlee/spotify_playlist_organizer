@@ -1,0 +1,837 @@
+[
+	{
+		"id" : "03ZdbEBsbFHG3uJC6gYiOY",
+		"name" : "Sam Greenfield",
+		"href" : "https://api.spotify.com/v1/artists/03ZdbEBsbFHG3uJC6gYiOY"
+	},
+	{
+		"id" : "04gDigrS5kc9YWfZHwBETP",
+		"name" : "Maroon 5",
+		"href" : "https://api.spotify.com/v1/artists/04gDigrS5kc9YWfZHwBETP"
+	},
+	{
+		"id" : "06knYh538h5SI7OAEF8ek3",
+		"name" : "Georgia",
+		"href" : "https://api.spotify.com/v1/artists/06knYh538h5SI7OAEF8ek3"
+	},
+	{
+		"id" : "0du5cEVh5yTK9QJze8zA0C",
+		"name" : "Bruno Mars",
+		"href" : "https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C"
+	},
+	{
+		"id" : "0fauHpmSHwodVYIjTqOGHz",
+		"name" : "Yiruma",
+		"href" : "https://api.spotify.com/v1/artists/0fauHpmSHwodVYIjTqOGHz"
+	},
+	{
+		"id" : "0fGVuq5ed21pM7iWwTcMyk",
+		"name" : "Amy Lee",
+		"href" : "https://api.spotify.com/v1/artists/0fGVuq5ed21pM7iWwTcMyk"
+	},
+	{
+		"id" : "0fTav4sBLmYOAzKuJw0grL",
+		"name" : "Mac Ayres",
+		"href" : "https://api.spotify.com/v1/artists/0fTav4sBLmYOAzKuJw0grL"
+	},
+	{
+		"id" : "0H39MdGGX6dbnnQPt6NQkZ",
+		"name" : "SAINt JHN",
+		"href" : "https://api.spotify.com/v1/artists/0H39MdGGX6dbnnQPt6NQkZ"
+	},
+	{
+		"id" : "0hDjKSKjl1DC7ovYTDJHe8",
+		"name" : "Bruno Major",
+		"href" : "https://api.spotify.com/v1/artists/0hDjKSKjl1DC7ovYTDJHe8"
+	},
+	{
+		"id" : "0hPB6WmY4JXhcrficlznCx",
+		"name" : "Phoebe Katis",
+		"href" : "https://api.spotify.com/v1/artists/0hPB6WmY4JXhcrficlznCx"
+	},
+	{
+		"id" : "0KDuKk6YdEu3hR56HtXmxt",
+		"name" : "Story Of The Year",
+		"href" : "https://api.spotify.com/v1/artists/0KDuKk6YdEu3hR56HtXmxt"
+	},
+	{
+		"id" : "0N0d3kjwdY2h7UVuTdJGfp",
+		"name" : "Cascada",
+		"href" : "https://api.spotify.com/v1/artists/0N0d3kjwdY2h7UVuTdJGfp"
+	},
+	{
+		"id" : "0oA8UUNNUP3zWCUkZVin0G",
+		"name" : "David Osborne",
+		"href" : "https://api.spotify.com/v1/artists/0oA8UUNNUP3zWCUkZVin0G"
+	},
+	{
+		"id" : "0p4nmQO2msCgU4IF37Wi3j",
+		"name" : "Avril Lavigne",
+		"href" : "https://api.spotify.com/v1/artists/0p4nmQO2msCgU4IF37Wi3j"
+	},
+	{
+		"id" : "0qT79UgT5tY4yudH9VfsdT",
+		"name" : "Sum 41",
+		"href" : "https://api.spotify.com/v1/artists/0qT79UgT5tY4yudH9VfsdT"
+	},
+	{
+		"id" : "0RqtSIYZmd4fiBKVFqyIqD",
+		"name" : "Thirty Seconds To Mars",
+		"href" : "https://api.spotify.com/v1/artists/0RqtSIYZmd4fiBKVFqyIqD"
+	},
+	{
+		"id" : "0Tcr6t5uyvDgOuNPCD36A3",
+		"name" : "Chad Tepper",
+		"href" : "https://api.spotify.com/v1/artists/0Tcr6t5uyvDgOuNPCD36A3"
+	},
+	{
+		"id" : "0ubGY2CcC0tvR0eE6hJaT8",
+		"name" : "Charlie Burg",
+		"href" : "https://api.spotify.com/v1/artists/0ubGY2CcC0tvR0eE6hJaT8"
+	},
+	{
+		"id" : "0Vw76uk7P8yVtTClWyOhac",
+		"name" : "HONNE",
+		"href" : "https://api.spotify.com/v1/artists/0Vw76uk7P8yVtTClWyOhac"
+	},
+	{
+		"id" : "0vWCyXMrrvMlCcepuOJaGI",
+		"name" : "BOYS LIKE GIRLS",
+		"href" : "https://api.spotify.com/v1/artists/0vWCyXMrrvMlCcepuOJaGI"
+	},
+	{
+		"id" : "0X2BH1fck6amBIoJhDVmmJ",
+		"name" : "Ellie Goulding",
+		"href" : "https://api.spotify.com/v1/artists/0X2BH1fck6amBIoJhDVmmJ"
+	},
+	{
+		"id" : "0Y5tJX1MQlPlqiwlOH1tJY",
+		"name" : "Travis Scott",
+		"href" : "https://api.spotify.com/v1/artists/0Y5tJX1MQlPlqiwlOH1tJY"
+	},
+	{
+		"id" : "0zJjil03QRbxSliMkw230M",
+		"name" : "Conor Albert",
+		"href" : "https://api.spotify.com/v1/artists/0zJjil03QRbxSliMkw230M"
+	},
+	{
+		"id" : "126FigDBtqwS2YsOYMTPQe",
+		"name" : "Hawthorne Heights",
+		"href" : "https://api.spotify.com/v1/artists/126FigDBtqwS2YsOYMTPQe"
+	},
+	{
+		"id" : "13y7CgLHjMVRMDqxdx0Xdo",
+		"name" : "Gucci Mane",
+		"href" : "https://api.spotify.com/v1/artists/13y7CgLHjMVRMDqxdx0Xdo"
+	},
+	{
+		"id" : "164Uj4eKjl6zTBKfJLFKKK",
+		"name" : "JVKE",
+		"href" : "https://api.spotify.com/v1/artists/164Uj4eKjl6zTBKfJLFKKK"
+	},
+	{
+		"id" : "16AILHA3N2C3ngRuR2FdfH",
+		"name" : "Saint Harison",
+		"href" : "https://api.spotify.com/v1/artists/16AILHA3N2C3ngRuR2FdfH"
+	},
+	{
+		"id" : "1B62oENW0VGjnBBUvwkYtX",
+		"name" : "No Suits",
+		"href" : "https://api.spotify.com/v1/artists/1B62oENW0VGjnBBUvwkYtX"
+	},
+	{
+		"id" : "1btWGBz4Uu1HozTwb2Lm8A",
+		"name" : "Hippo Campus",
+		"href" : "https://api.spotify.com/v1/artists/1btWGBz4Uu1HozTwb2Lm8A"
+	},
+	{
+		"id" : "1dPSMH55yhvjYIwqCP4iDj",
+		"name" : "Luke Chiang",
+		"href" : "https://api.spotify.com/v1/artists/1dPSMH55yhvjYIwqCP4iDj"
+	},
+	{
+		"id" : "1dy5WNgIKQU6ezkpZs4y8z",
+		"name" : "ROLE MODEL",
+		"href" : "https://api.spotify.com/v1/artists/1dy5WNgIKQU6ezkpZs4y8z"
+	},
+	{
+		"id" : "1Eouxp32e6g0kgvuG5YNBO",
+		"name" : "Robin Spielberg",
+		"href" : "https://api.spotify.com/v1/artists/1Eouxp32e6g0kgvuG5YNBO"
+	},
+	{
+		"id" : "1h6Cn3P4NGzXbaXidqURXs",
+		"name" : "Swedish House Mafia",
+		"href" : "https://api.spotify.com/v1/artists/1h6Cn3P4NGzXbaXidqURXs"
+	},
+	{
+		"id" : "1HY2Jd0NmPuamShAr6KMms",
+		"name" : "Lady Gaga",
+		"href" : "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms"
+	},
+	{
+		"id" : "1NU9Em6e8dDo36Js6nEo3t",
+		"name" : "A Rocket To The Moon",
+		"href" : "https://api.spotify.com/v1/artists/1NU9Em6e8dDo36Js6nEo3t"
+	},
+	{
+		"id" : "1ooV8YZC1KbpEcrmI8WH0F",
+		"name" : "Yebba",
+		"href" : "https://api.spotify.com/v1/artists/1ooV8YZC1KbpEcrmI8WH0F"
+	},
+	{
+		"id" : "1pgtr4nhBQjp9oCUBPyYWh",
+		"name" : "Fountains Of Wayne",
+		"href" : "https://api.spotify.com/v1/artists/1pgtr4nhBQjp9oCUBPyYWh"
+	},
+	{
+		"id" : "1SImpQO0GbjRgvlwCcCtFo",
+		"name" : "The Red Jumpsuit Apparatus",
+		"href" : "https://api.spotify.com/v1/artists/1SImpQO0GbjRgvlwCcCtFo"
+	},
+	{
+		"id" : "1uiEZYehlNivdK3iQyAbye",
+		"name" : "Tom Misch",
+		"href" : "https://api.spotify.com/v1/artists/1uiEZYehlNivdK3iQyAbye"
+	},
+	{
+		"id" : "1UJKiAI4Evnhh1ExDse25D",
+		"name" : "Dreamer Boy",
+		"href" : "https://api.spotify.com/v1/artists/1UJKiAI4Evnhh1ExDse25D"
+	},
+	{
+		"id" : "1uNFoZAHBGtllmzznpCI3s",
+		"name" : "Justin Bieber",
+		"href" : "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s"
+	},
+	{
+		"id" : "1VPmR4DJC1PlOtd0IADAO0",
+		"name" : "$uicideboy$",
+		"href" : "https://api.spotify.com/v1/artists/1VPmR4DJC1PlOtd0IADAO0"
+	},
+	{
+		"id" : "1Xyo4u8uXC1ZmMpatF05PJ",
+		"name" : "The Weeknd",
+		"href" : "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ"
+	},
+	{
+		"id" : "1z7b1Pr1rSlvWRzsW3HOrS",
+		"name" : "Russ",
+		"href" : "https://api.spotify.com/v1/artists/1z7b1Pr1rSlvWRzsW3HOrS"
+	},
+	{
+		"id" : "20JZFwl6HVl6yg8a4H3ZqK",
+		"name" : "Panic! At The Disco",
+		"href" : "https://api.spotify.com/v1/artists/20JZFwl6HVl6yg8a4H3ZqK"
+	},
+	{
+		"id" : "21E3waRsmPlU7jZsS13rcj",
+		"name" : "Ne-Yo",
+		"href" : "https://api.spotify.com/v1/artists/21E3waRsmPlU7jZsS13rcj"
+	},
+	{
+		"id" : "24XtlMhEMNdi822vi0MhY1",
+		"name" : "Taking Back Sunday",
+		"href" : "https://api.spotify.com/v1/artists/24XtlMhEMNdi822vi0MhY1"
+	},
+	{
+		"id" : "27mFvqQj8KpjmdKIqcw1mG",
+		"name" : "Ayo & Teo",
+		"href" : "https://api.spotify.com/v1/artists/27mFvqQj8KpjmdKIqcw1mG"
+	},
+	{
+		"id" : "2cFrymmkijnjDg9SS92EPM",
+		"name" : "blackbear",
+		"href" : "https://api.spotify.com/v1/artists/2cFrymmkijnjDg9SS92EPM"
+	},
+	{
+		"id" : "2eRJjYEaWyGZbOBGYFLBoC",
+		"name" : "The Ready Set",
+		"href" : "https://api.spotify.com/v1/artists/2eRJjYEaWyGZbOBGYFLBoC"
+	},
+	{
+		"id" : "2HPqVfdPh9JkBSlFG5hK6h",
+		"name" : "anees",
+		"href" : "https://api.spotify.com/v1/artists/2HPqVfdPh9JkBSlFG5hK6h"
+	},
+	{
+		"id" : "2kGBy2WHvF0VdZyqiVCkDT",
+		"name" : "Father John Misty",
+		"href" : "https://api.spotify.com/v1/artists/2kGBy2WHvF0VdZyqiVCkDT"
+	},
+	{
+		"id" : "2LIk90788K0zvyj2JJVwkJ",
+		"name" : "Jack Harlow",
+		"href" : "https://api.spotify.com/v1/artists/2LIk90788K0zvyj2JJVwkJ"
+	},
+	{
+		"id" : "2p4FqHnazRucYQHyDCdBrJ",
+		"name" : "Simple Plan",
+		"href" : "https://api.spotify.com/v1/artists/2p4FqHnazRucYQHyDCdBrJ"
+	},
+	{
+		"id" : "2PJ06l59DomDd440az768u",
+		"name" : "Landon Conrath",
+		"href" : "https://api.spotify.com/v1/artists/2PJ06l59DomDd440az768u"
+	},
+	{
+		"id" : "2PsjBHyb950JI7BHXY10TD",
+		"name" : "Cool & Dre",
+		"href" : "https://api.spotify.com/v1/artists/2PsjBHyb950JI7BHXY10TD"
+	},
+	{
+		"id" : "2pZ83NwGQGiWxC3qJSTPBE",
+		"name" : "mj apanay",
+		"href" : "https://api.spotify.com/v1/artists/2pZ83NwGQGiWxC3qJSTPBE"
+	},
+	{
+		"id" : "2TDLqEjKk2G6gjxJ0hjjbI",
+		"name" : "Thad Fiscella",
+		"href" : "https://api.spotify.com/v1/artists/2TDLqEjKk2G6gjxJ0hjjbI"
+	},
+	{
+		"id" : "2Tglaf8nvDzwSQnpSrjLHP",
+		"name" : "Cuco",
+		"href" : "https://api.spotify.com/v1/artists/2Tglaf8nvDzwSQnpSrjLHP"
+	},
+	{
+		"id" : "2tIP7SsRs7vjIcLrU85W8J",
+		"name" : "The Kid LAROI",
+		"href" : "https://api.spotify.com/v1/artists/2tIP7SsRs7vjIcLrU85W8J"
+	},
+	{
+		"id" : "2VKfXEWzhUi9siHBDTI02Y",
+		"name" : "Joep Beving",
+		"href" : "https://api.spotify.com/v1/artists/2VKfXEWzhUi9siHBDTI02Y"
+	},
+	{
+		"id" : "2xiIXseIJcq3nG7C8fHeBj",
+		"name" : "Three Days Grace",
+		"href" : "https://api.spotify.com/v1/artists/2xiIXseIJcq3nG7C8fHeBj"
+	},
+	{
+		"id" : "2ysnwxxNtSgbb9t1m2Ur4j",
+		"name" : "George Ezra",
+		"href" : "https://api.spotify.com/v1/artists/2ysnwxxNtSgbb9t1m2Ur4j"
+	},
+	{
+		"id" : "33crDRqANd3NQHJagZkQ7O",
+		"name" : "slchld",
+		"href" : "https://api.spotify.com/v1/artists/33crDRqANd3NQHJagZkQ7O"
+	},
+	{
+		"id" : "3ao3jf5d70Tf4fPh2bnXVl",
+		"name" : "We The Kings",
+		"href" : "https://api.spotify.com/v1/artists/3ao3jf5d70Tf4fPh2bnXVl"
+	},
+	{
+		"id" : "3aQeKQSyrW4qWr35idm0cy",
+		"name" : "T-Pain",
+		"href" : "https://api.spotify.com/v1/artists/3aQeKQSyrW4qWr35idm0cy"
+	},
+	{
+		"id" : "3Be0FxZRoCJ8UPrkwe6Xuw",
+		"name" : "Stan Whitmire",
+		"href" : "https://api.spotify.com/v1/artists/3Be0FxZRoCJ8UPrkwe6Xuw"
+	},
+	{
+		"id" : "3Cpk1xlScqbYhmv5EqoI4Y",
+		"name" : "First to Eleven",
+		"href" : "https://api.spotify.com/v1/artists/3Cpk1xlScqbYhmv5EqoI4Y"
+	},
+	{
+		"id" : "3dTzeO0QCd86cXSgQ04Y3r",
+		"name" : "Rainych",
+		"href" : "https://api.spotify.com/v1/artists/3dTzeO0QCd86cXSgQ04Y3r"
+	},
+	{
+		"id" : "3Jm6kDs1lVTJSiIN6fZyP4",
+		"name" : "LEW",
+		"href" : "https://api.spotify.com/v1/artists/3Jm6kDs1lVTJSiIN6fZyP4"
+	},
+	{
+		"id" : "3jwm6OBdUY5xzFiFIPhMHu",
+		"name" : "The Academy Is...",
+		"href" : "https://api.spotify.com/v1/artists/3jwm6OBdUY5xzFiFIPhMHu"
+	},
+	{
+		"id" : "3kkoYvxvV00UXPJCqMCljL",
+		"name" : "Caye",
+		"href" : "https://api.spotify.com/v1/artists/3kkoYvxvV00UXPJCqMCljL"
+	},
+	{
+		"id" : "3M8UUCqb0mIEn5S2lO13yv",
+		"name" : "Forrest Nolan",
+		"href" : "https://api.spotify.com/v1/artists/3M8UUCqb0mIEn5S2lO13yv"
+	},
+	{
+		"id" : "3mIj9lX2MWuHmhNCA7LSCW",
+		"name" : "The 1975",
+		"href" : "https://api.spotify.com/v1/artists/3mIj9lX2MWuHmhNCA7LSCW"
+	},
+	{
+		"id" : "3nJWBJvK7uGvfp4iZh9CkN",
+		"name" : "Relient K",
+		"href" : "https://api.spotify.com/v1/artists/3nJWBJvK7uGvfp4iZh9CkN"
+	},
+	{
+		"id" : "3sYoUB7tAeXO7sOAB8eaII",
+		"name" : "BAILEN",
+		"href" : "https://api.spotify.com/v1/artists/3sYoUB7tAeXO7sOAB8eaII"
+	},
+	{
+		"id" : "3tQx1LPXbsYjE9VwN1Peaa",
+		"name" : "Marc E. Bassy",
+		"href" : "https://api.spotify.com/v1/artists/3tQx1LPXbsYjE9VwN1Peaa"
+	},
+	{
+		"id" : "3UVRliakQfa1pMWIsNuiZ8",
+		"name" : "Musiq Soulchild",
+		"href" : "https://api.spotify.com/v1/artists/3UVRliakQfa1pMWIsNuiZ8"
+	},
+	{
+		"id" : "3vAaWhdBR38Q02ohXqaNHT",
+		"name" : "The All-American Rejects",
+		"href" : "https://api.spotify.com/v1/artists/3vAaWhdBR38Q02ohXqaNHT"
+	},
+	{
+		"id" : "3WfJ1OtrWI7RViX9DMyEGy",
+		"name" : "Mayday Parade",
+		"href" : "https://api.spotify.com/v1/artists/3WfJ1OtrWI7RViX9DMyEGy"
+	},
+	{
+		"id" : "3xzfeAKY5GlsHo4uQevDu0",
+		"name" : "Manon Clément",
+		"href" : "https://api.spotify.com/v1/artists/3xzfeAKY5GlsHo4uQevDu0"
+	},
+	{
+		"id" : "3zE5jV6Uw9hhdWCXM8hS3j",
+		"name" : "The Weeks",
+		"href" : "https://api.spotify.com/v1/artists/3zE5jV6Uw9hhdWCXM8hS3j"
+	},
+	{
+		"id" : "3zxKH0qp3nBCuPZCZT5Vaf",
+		"name" : "Yellowcard",
+		"href" : "https://api.spotify.com/v1/artists/3zxKH0qp3nBCuPZCZT5Vaf"
+	},
+	{
+		"id" : "42aeGx2I3uXINpGqC8L0LD",
+		"name" : "Jack's Mannequin",
+		"href" : "https://api.spotify.com/v1/artists/42aeGx2I3uXINpGqC8L0LD"
+	},
+	{
+		"id" : "46gyXjRIvN1NL1eCB8GBxo",
+		"name" : "All Time Low",
+		"href" : "https://api.spotify.com/v1/artists/46gyXjRIvN1NL1eCB8GBxo"
+	},
+	{
+		"id" : "46SHBwWsqBkxI7EeeBEQG7",
+		"name" : "Kodak Black",
+		"href" : "https://api.spotify.com/v1/artists/46SHBwWsqBkxI7EeeBEQG7"
+	},
+	{
+		"id" : "48pPTmMg2QrXaQfU03FLMZ",
+		"name" : "A V I A N D",
+		"href" : "https://api.spotify.com/v1/artists/48pPTmMg2QrXaQfU03FLMZ"
+	},
+	{
+		"id" : "4AGwPDdh1y8hochNzHy5HC",
+		"name" : "RAC",
+		"href" : "https://api.spotify.com/v1/artists/4AGwPDdh1y8hochNzHy5HC"
+	},
+	{
+		"id" : "4AMBKLK4ZalL6gm7uvvdZh",
+		"name" : "Sam MacPherson",
+		"href" : "https://api.spotify.com/v1/artists/4AMBKLK4ZalL6gm7uvvdZh"
+	},
+	{
+		"id" : "4cnFw4bkIWVGKUBsr93OS5",
+		"name" : "Stephen Day",
+		"href" : "https://api.spotify.com/v1/artists/4cnFw4bkIWVGKUBsr93OS5"
+	},
+	{
+		"id" : "4Dwhb9SL7iO3L27oXvEiO7",
+		"name" : "girlfriends",
+		"href" : "https://api.spotify.com/v1/artists/4Dwhb9SL7iO3L27oXvEiO7"
+	},
+	{
+		"id" : "4ellgkPyhbJetngXmHX5Zh",
+		"name" : "Absolutely",
+		"href" : "https://api.spotify.com/v1/artists/4ellgkPyhbJetngXmHX5Zh"
+	},
+	{
+		"id" : "4exLIFE8sISLr28sqG1qNX",
+		"name" : "Travis Barker",
+		"href" : "https://api.spotify.com/v1/artists/4exLIFE8sISLr28sqG1qNX"
+	},
+	{
+		"id" : "4frytKnOBrer4QVPWynGtX",
+		"name" : "Forever The Sickest Kids",
+		"href" : "https://api.spotify.com/v1/artists/4frytKnOBrer4QVPWynGtX"
+	},
+	{
+		"id" : "4ghjRm4M2vChDfTUycx0Ce",
+		"name" : "New Found Glory",
+		"href" : "https://api.spotify.com/v1/artists/4ghjRm4M2vChDfTUycx0Ce"
+	},
+	{
+		"id" : "4Gso3d4CscCijv0lmajZWs",
+		"name" : "Don Toliver",
+		"href" : "https://api.spotify.com/v1/artists/4Gso3d4CscCijv0lmajZWs"
+	},
+	{
+		"id" : "4GvEc3ANtPPjt1ZJllr5Zl",
+		"name" : "Bazzi",
+		"href" : "https://api.spotify.com/v1/artists/4GvEc3ANtPPjt1ZJllr5Zl"
+	},
+	{
+		"id" : "4iDroUFo89Y7YBsdDTBmTD",
+		"name" : "Sueco",
+		"href" : "https://api.spotify.com/v1/artists/4iDroUFo89Y7YBsdDTBmTD"
+	},
+	{
+		"id" : "4iMO20EPodreIaEl8qW66y",
+		"name" : "Still Woozy",
+		"href" : "https://api.spotify.com/v1/artists/4iMO20EPodreIaEl8qW66y"
+	},
+	{
+		"id" : "4IVAbR2w4JJNJDDRFP3E83",
+		"name" : "6LACK",
+		"href" : "https://api.spotify.com/v1/artists/4IVAbR2w4JJNJDDRFP3E83"
+	},
+	{
+		"id" : "4MCBfE4596Uoi2O4DtmEMz",
+		"name" : "Juice WRLD",
+		"href" : "https://api.spotify.com/v1/artists/4MCBfE4596Uoi2O4DtmEMz"
+	},
+	{
+		"id" : "4mr4X9nJC8DPlNukWbgAaI",
+		"name" : "HYBS",
+		"href" : "https://api.spotify.com/v1/artists/4mr4X9nJC8DPlNukWbgAaI"
+	},
+	{
+		"id" : "4NuiDXtUaaclXGNEPQYBBx",
+		"name" : "Young Mister",
+		"href" : "https://api.spotify.com/v1/artists/4NuiDXtUaaclXGNEPQYBBx"
+	},
+	{
+		"id" : "4o0pNHbyj36LPvukNqEug0",
+		"name" : "The Maine",
+		"href" : "https://api.spotify.com/v1/artists/4o0pNHbyj36LPvukNqEug0"
+	},
+	{
+		"id" : "4pADjHPWyrlAF0FA7joK2H",
+		"name" : "Jay Sean",
+		"href" : "https://api.spotify.com/v1/artists/4pADjHPWyrlAF0FA7joK2H"
+	},
+	{
+		"id" : "4Qc2hTBOx11WvgZMK2M4O9",
+		"name" : "Nathan Adams",
+		"href" : "https://api.spotify.com/v1/artists/4Qc2hTBOx11WvgZMK2M4O9"
+	},
+	{
+		"id" : "4RddZ3iHvSpGV4dvATac9X",
+		"name" : "Papa Roach",
+		"href" : "https://api.spotify.com/v1/artists/4RddZ3iHvSpGV4dvATac9X"
+	},
+	{
+		"id" : "4UXqAaa6dQYAk18Lv7PEgX",
+		"name" : "Fall Out Boy",
+		"href" : "https://api.spotify.com/v1/artists/4UXqAaa6dQYAk18Lv7PEgX"
+	},
+	{
+		"id" : "4vGrte8FDu062Ntj0RsPiZ",
+		"name" : "Polyphia",
+		"href" : "https://api.spotify.com/v1/artists/4vGrte8FDu062Ntj0RsPiZ"
+	},
+	{
+		"id" : "4XlcLj6bxCnpBIOHmBpIWP",
+		"name" : "American Hi-Fi",
+		"href" : "https://api.spotify.com/v1/artists/4XlcLj6bxCnpBIOHmBpIWP"
+	},
+	{
+		"id" : "4xqGhP2gUWyaMMHqPU3UHj",
+		"name" : "Ignite the Fire",
+		"href" : "https://api.spotify.com/v1/artists/4xqGhP2gUWyaMMHqPU3UHj"
+	},
+	{
+		"id" : "543ccHFPnZfJMD8tRGPtu7",
+		"name" : "James Smith",
+		"href" : "https://api.spotify.com/v1/artists/543ccHFPnZfJMD8tRGPtu7"
+	},
+	{
+		"id" : "54tv11ndFfiqXiR03PwdlB",
+		"name" : "Adam Melchor",
+		"href" : "https://api.spotify.com/v1/artists/54tv11ndFfiqXiR03PwdlB"
+	},
+	{
+		"id" : "55Aa2cqylxrFIXC767Z865",
+		"name" : "Lil Wayne",
+		"href" : "https://api.spotify.com/v1/artists/55Aa2cqylxrFIXC767Z865"
+	},
+	{
+		"id" : "58bPSgeKpyyFlJ9LatULIO",
+		"name" : "HARBOUR",
+		"href" : "https://api.spotify.com/v1/artists/58bPSgeKpyyFlJ9LatULIO"
+	},
+	{
+		"id" : "5a2EaR3hamoenG9rDuVn8j",
+		"name" : "Prince",
+		"href" : "https://api.spotify.com/v1/artists/5a2EaR3hamoenG9rDuVn8j"
+	},
+	{
+		"id" : "5aYyPjAsLj7UzANzdupwnS",
+		"name" : "Good Charlotte",
+		"href" : "https://api.spotify.com/v1/artists/5aYyPjAsLj7UzANzdupwnS"
+	},
+	{
+		"id" : "5BcEbeQq5n2fz8HbhI9CWU",
+		"name" : "Emile Pandolfi",
+		"href" : "https://api.spotify.com/v1/artists/5BcEbeQq5n2fz8HbhI9CWU"
+	},
+	{
+		"id" : "5CiGnKThu5ctn9pBxv7DGa",
+		"name" : "benny blanco",
+		"href" : "https://api.spotify.com/v1/artists/5CiGnKThu5ctn9pBxv7DGa"
+	},
+	{
+		"id" : "5cj0lLjcoR7YOSnhnX0Po5",
+		"name" : "Doja Cat",
+		"href" : "https://api.spotify.com/v1/artists/5cj0lLjcoR7YOSnhnX0Po5"
+	},
+	{
+		"id" : "5CzlICF8GCY0pRC82MKrhX",
+		"name" : "Labi Siffre",
+		"href" : "https://api.spotify.com/v1/artists/5CzlICF8GCY0pRC82MKrhX"
+	},
+	{
+		"id" : "5F1aAS1duwlzExnPs3l2Xe",
+		"name" : "Pooh Shiesty",
+		"href" : "https://api.spotify.com/v1/artists/5F1aAS1duwlzExnPs3l2Xe"
+	},
+	{
+		"id" : "5MLIxVYkY4Fc2dwdaYSS8G",
+		"name" : "Suriel Hess",
+		"href" : "https://api.spotify.com/v1/artists/5MLIxVYkY4Fc2dwdaYSS8G"
+	},
+	{
+		"id" : "5ND0mGcL9SKSjWIjPd0xIb",
+		"name" : "Bowling For Soup",
+		"href" : "https://api.spotify.com/v1/artists/5ND0mGcL9SKSjWIjPd0xIb"
+	},
+	{
+		"id" : "5nGIFgo0shDenQYSE0Sn7c",
+		"name" : "Evanescence",
+		"href" : "https://api.spotify.com/v1/artists/5nGIFgo0shDenQYSE0Sn7c"
+	},
+	{
+		"id" : "5ojhEavq6altxW8fWIlLum",
+		"name" : "Escape the Fate",
+		"href" : "https://api.spotify.com/v1/artists/5ojhEavq6altxW8fWIlLum"
+	},
+	{
+		"id" : "5pKCCKE2ajJHZ9KAiaK11H",
+		"name" : "Rihanna",
+		"href" : "https://api.spotify.com/v1/artists/5pKCCKE2ajJHZ9KAiaK11H"
+	},
+	{
+		"id" : "5Rl15oVamLq7FbSb0NNBNy",
+		"name" : "5 Seconds of Summer",
+		"href" : "https://api.spotify.com/v1/artists/5Rl15oVamLq7FbSb0NNBNy"
+	},
+	{
+		"id" : "5S68VYXiXt6oq30pKqQAuV",
+		"name" : "Dane Amar",
+		"href" : "https://api.spotify.com/v1/artists/5S68VYXiXt6oq30pKqQAuV"
+	},
+	{
+		"id" : "5xkAtLTf309LAGZTbvULBn",
+		"name" : "Ruel",
+		"href" : "https://api.spotify.com/v1/artists/5xkAtLTf309LAGZTbvULBn"
+	},
+	{
+		"id" : "67nwj3Y5sZQLl72VNUHEYE",
+		"name" : "Wale",
+		"href" : "https://api.spotify.com/v1/artists/67nwj3Y5sZQLl72VNUHEYE"
+	},
+	{
+		"id" : "6ASri4ePR7RlsvIQgWPJpS",
+		"name" : "iann dior",
+		"href" : "https://api.spotify.com/v1/artists/6ASri4ePR7RlsvIQgWPJpS"
+	},
+	{
+		"id" : "6B5c4sch27tWHAGdarpPaW",
+		"name" : "Seether",
+		"href" : "https://api.spotify.com/v1/artists/6B5c4sch27tWHAGdarpPaW"
+	},
+	{
+		"id" : "6eAUAR4N9NOpirukqdIzVI",
+		"name" : "Madison Ryann Ward",
+		"href" : "https://api.spotify.com/v1/artists/6eAUAR4N9NOpirukqdIzVI"
+	},
+	{
+		"id" : "6FBDaR13swtiWwGhX1WQsP",
+		"name" : "blink-182",
+		"href" : "https://api.spotify.com/v1/artists/6FBDaR13swtiWwGhX1WQsP"
+	},
+	{
+		"id" : "6JxQbC46LapcvanSk4J3OP",
+		"name" : "Alt Bloom",
+		"href" : "https://api.spotify.com/v1/artists/6JxQbC46LapcvanSk4J3OP"
+	},
+	{
+		"id" : "6KImCVD70vtIoJWnq6nGn3",
+		"name" : "Harry Styles",
+		"href" : "https://api.spotify.com/v1/artists/6KImCVD70vtIoJWnq6nGn3"
+	},
+	{
+		"id" : "6l3HvQ5sa6mXTsMTB19rO5",
+		"name" : "J. Cole",
+		"href" : "https://api.spotify.com/v1/artists/6l3HvQ5sa6mXTsMTB19rO5"
+	},
+	{
+		"id" : "6LuN9FCkKOj5PcnpouEgny",
+		"name" : "Khalid",
+		"href" : "https://api.spotify.com/v1/artists/6LuN9FCkKOj5PcnpouEgny"
+	},
+	{
+		"id" : "6MF9fzBmfXghAz953czmBC",
+		"name" : "Taio Cruz",
+		"href" : "https://api.spotify.com/v1/artists/6MF9fzBmfXghAz953czmBC"
+	},
+	{
+		"id" : "6N1l2HIYtw3RhoJ2wzLYaB",
+		"name" : "Natalie Layne",
+		"href" : "https://api.spotify.com/v1/artists/6N1l2HIYtw3RhoJ2wzLYaB"
+	},
+	{
+		"id" : "6S2OmqARrzebs0tKUEyXyp",
+		"name" : "Demi Lovato",
+		"href" : "https://api.spotify.com/v1/artists/6S2OmqARrzebs0tKUEyXyp"
+	},
+	{
+		"id" : "6TdfKQvrdHZdr4DIzjuWOr",
+		"name" : "Canyon City",
+		"href" : "https://api.spotify.com/v1/artists/6TdfKQvrdHZdr4DIzjuWOr"
+	},
+	{
+		"id" : "6TIYQ3jFPwQSRmorSezPxX",
+		"name" : "Machine Gun Kelly",
+		"href" : "https://api.spotify.com/v1/artists/6TIYQ3jFPwQSRmorSezPxX"
+	},
+	{
+		"id" : "6TWEX2qTj9b0bBsXSVCMKM",
+		"name" : "Maya Delilah",
+		"href" : "https://api.spotify.com/v1/artists/6TWEX2qTj9b0bBsXSVCMKM"
+	},
+	{
+		"id" : "6UEYawMcp2M4JFoXVOtZEq",
+		"name" : "Dustin O'Halloran",
+		"href" : "https://api.spotify.com/v1/artists/6UEYawMcp2M4JFoXVOtZEq"
+	},
+	{
+		"id" : "6UIWSoi2nfWnzudA817dg0",
+		"name" : "Staring in Spaces",
+		"href" : "https://api.spotify.com/v1/artists/6UIWSoi2nfWnzudA817dg0"
+	},
+	{
+		"id" : "6wQMF27xWhSyJFnO9L5mQk",
+		"name" : "Cartel",
+		"href" : "https://api.spotify.com/v1/artists/6wQMF27xWhSyJFnO9L5mQk"
+	},
+	{
+		"id" : "6xRlQCMpg8bmkHlluqDF7Z",
+		"name" : "Devin Kennedy",
+		"href" : "https://api.spotify.com/v1/artists/6xRlQCMpg8bmkHlluqDF7Z"
+	},
+	{
+		"id" : "6Y64EaNqpqcZYTgs4c76gF",
+		"name" : "Jaden Hossler",
+		"href" : "https://api.spotify.com/v1/artists/6Y64EaNqpqcZYTgs4c76gF"
+	},
+	{
+		"id" : "74fcIBekHLf4hucCT3My0v",
+		"name" : "KAIRO",
+		"href" : "https://api.spotify.com/v1/artists/74fcIBekHLf4hucCT3My0v"
+	},
+	{
+		"id" : "74XFHRwlV6OrjEM0A2NCMF",
+		"name" : "Paramore",
+		"href" : "https://api.spotify.com/v1/artists/74XFHRwlV6OrjEM0A2NCMF"
+	},
+	{
+		"id" : "75OSuJw6r1LCdYgmTt0gHs",
+		"name" : "Micah Edwards",
+		"href" : "https://api.spotify.com/v1/artists/75OSuJw6r1LCdYgmTt0gHs"
+	},
+	{
+		"id" : "79hrYiudVcFyyxyJW0ipTy",
+		"name" : "The Paper Kites",
+		"href" : "https://api.spotify.com/v1/artists/79hrYiudVcFyyxyJW0ipTy"
+	},
+	{
+		"id" : "7AsPubxWM5tfW4hTZEL3aP",
+		"name" : "Cute Is What We Aim For",
+		"href" : "https://api.spotify.com/v1/artists/7AsPubxWM5tfW4hTZEL3aP"
+	},
+	{
+		"id" : "7c0XG5cIJTrrAgEC3ULPiq",
+		"name" : "Ty Dolla $ign",
+		"href" : "https://api.spotify.com/v1/artists/7c0XG5cIJTrrAgEC3ULPiq"
+	},
+	{
+		"id" : "7EGwUS3c5dXduO4sMyLWC5",
+		"name" : "Houndmouth",
+		"href" : "https://api.spotify.com/v1/artists/7EGwUS3c5dXduO4sMyLWC5"
+	},
+	{
+		"id" : "7FBcuc1gsnv6Y1nwFtNRCb",
+		"name" : "My Chemical Romance",
+		"href" : "https://api.spotify.com/v1/artists/7FBcuc1gsnv6Y1nwFtNRCb"
+	},
+	{
+		"id" : "7gAppWoH7pcYmphCVTXkzs",
+		"name" : "The Vamps",
+		"href" : "https://api.spotify.com/v1/artists/7gAppWoH7pcYmphCVTXkzs"
+	},
+	{
+		"id" : "7gQNLR8mykA1KjGClbPYHe",
+		"name" : "MNDR",
+		"href" : "https://api.spotify.com/v1/artists/7gQNLR8mykA1KjGClbPYHe"
+	},
+	{
+		"id" : "7LlIWfvgWlDBXfxCvCFbuC",
+		"name" : "Eloise",
+		"href" : "https://api.spotify.com/v1/artists/7LlIWfvgWlDBXfxCvCFbuC"
+	},
+	{
+		"id" : "7LnaAXbDVIL75IVPnndf7w",
+		"name" : "Jamie Foxx",
+		"href" : "https://api.spotify.com/v1/artists/7LnaAXbDVIL75IVPnndf7w"
+	},
+	{
+		"id" : "7oPftvlwr6VrsViSDV7fJY",
+		"name" : "Green Day",
+		"href" : "https://api.spotify.com/v1/artists/7oPftvlwr6VrsViSDV7fJY"
+	},
+	{
+		"id" : "7pXu47GoqSYRajmBCjxdD6",
+		"name" : "Vulfpeck",
+		"href" : "https://api.spotify.com/v1/artists/7pXu47GoqSYRajmBCjxdD6"
+	},
+	{
+		"id" : "7tYKF4w9nC0nq9CsPZTHyP",
+		"name" : "SZA",
+		"href" : "https://api.spotify.com/v1/artists/7tYKF4w9nC0nq9CsPZTHyP"
+	},
+	{
+		"id" : "7vXwfZyDp3spzIVNXDaTPN",
+		"name" : "Metro Station",
+		"href" : "https://api.spotify.com/v1/artists/7vXwfZyDp3spzIVNXDaTPN"
+	},
+	{
+		"id" : "7wg1qvie3KqDNQbAkTdbX0",
+		"name" : "Louis The Child",
+		"href" : "https://api.spotify.com/v1/artists/7wg1qvie3KqDNQbAkTdbX0"
+	}
+]

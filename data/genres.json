@@ -1,0 +1,494 @@
+[
+	{
+		"genre" : "acoustic pop"
+	},
+	{
+		"genre" : "alt z"
+	},
+	{
+		"genre" : "alternative metal"
+	},
+	{
+		"genre" : "anime lo-fi"
+	},
+	{
+		"genre" : "ann arbor indie"
+	},
+	{
+		"genre" : "art pop"
+	},
+	{
+		"genre" : "asian american hip hop"
+	},
+	{
+		"genre" : "atl hip hop"
+	},
+	{
+		"genre" : "atlanta punk"
+	},
+	{
+		"genre" : "australian alternative pop"
+	},
+	{
+		"genre" : "australian hip hop"
+	},
+	{
+		"genre" : "australian indie folk"
+	},
+	{
+		"genre" : "background piano"
+	},
+	{
+		"genre" : "barbadian pop"
+	},
+	{
+		"genre" : "bedroom pop"
+	},
+	{
+		"genre" : "bedroom r&b"
+	},
+	{
+		"genre" : "bedroom soul"
+	},
+	{
+		"genre" : "boston hip hop"
+	},
+	{
+		"genre" : "boy band"
+	},
+	{
+		"genre" : "cali rap"
+	},
+	{
+		"genre" : "canadian ccm"
+	},
+	{
+		"genre" : "canadian contemporary r&b"
+	},
+	{
+		"genre" : "canadian metal"
+	},
+	{
+		"genre" : "canadian pop"
+	},
+	{
+		"genre" : "canadian pop punk"
+	},
+	{
+		"genre" : "canadian punk"
+	},
+	{
+		"genre" : "canadian rock"
+	},
+	{
+		"genre" : "candy pop"
+	},
+	{
+		"genre" : "chamber pop"
+	},
+	{
+		"genre" : "chicago rap"
+	},
+	{
+		"genre" : "chill r&b"
+	},
+	{
+		"genre" : "christian alternative rock"
+	},
+	{
+		"genre" : "christian punk"
+	},
+	{
+		"genre" : "cincinnati indie"
+	},
+	{
+		"genre" : "city pop"
+	},
+	{
+		"genre" : "classic uk pop"
+	},
+	{
+		"genre" : "classify"
+	},
+	{
+		"genre" : "cloud rap"
+	},
+	{
+		"genre" : "compositional ambient"
+	},
+	{
+		"genre" : "conscious hip hop"
+	},
+	{
+		"genre" : "contemporary r&b"
+	},
+	{
+		"genre" : "dance pop"
+	},
+	{
+		"genre" : "dark trap"
+	},
+	{
+		"genre" : "dayton indie"
+	},
+	{
+		"genre" : "deep underground hip hop"
+	},
+	{
+		"genre" : "dirty south rap"
+	},
+	{
+		"genre" : "dream pop"
+	},
+	{
+		"genre" : "easycore"
+	},
+	{
+		"genre" : "edm"
+	},
+	{
+		"genre" : "electropop"
+	},
+	{
+		"genre" : "electropowerpop"
+	},
+	{
+		"genre" : "emo"
+	},
+	{
+		"genre" : "eurodance"
+	},
+	{
+		"genre" : "europop"
+	},
+	{
+		"genre" : "florida drill"
+	},
+	{
+		"genre" : "florida rap"
+	},
+	{
+		"genre" : "folk-pop"
+	},
+	{
+		"genre" : "funk"
+	},
+	{
+		"genre" : "funk rock"
+	},
+	{
+		"genre" : "gangster rap"
+	},
+	{
+		"genre" : "gen z singer-songwriter"
+	},
+	{
+		"genre" : "german techno"
+	},
+	{
+		"genre" : "hawaiian hip hop"
+	},
+	{
+		"genre" : "hel"
+	},
+	{
+		"genre" : "hip hop"
+	},
+	{
+		"genre" : "hip pop"
+	},
+	{
+		"genre" : "hopebeat"
+	},
+	{
+		"genre" : "indie anthem-folk"
+	},
+	{
+		"genre" : "indie folk"
+	},
+	{
+		"genre" : "indie pop"
+	},
+	{
+		"genre" : "indie pop rap"
+	},
+	{
+		"genre" : "indie poptimism"
+	},
+	{
+		"genre" : "indie r&b"
+	},
+	{
+		"genre" : "indie rock"
+	},
+	{
+		"genre" : "indie soul"
+	},
+	{
+		"genre" : "indiecoustica"
+	},
+	{
+		"genre" : "indietronica"
+	},
+	{
+		"genre" : "instrumental funk"
+	},
+	{
+		"genre" : "instrumental rock"
+	},
+	{
+		"genre" : "instrumental worship"
+	},
+	{
+		"genre" : "jazz pop"
+	},
+	{
+		"genre" : "kentucky hip hop"
+	},
+	{
+		"genre" : "korean instrumental"
+	},
+	{
+		"genre" : "la pop"
+	},
+	{
+		"genre" : "melbourne bounce international"
+	},
+	{
+		"genre" : "melodic rap"
+	},
+	{
+		"genre" : "memphis hip hop"
+	},
+	{
+		"genre" : "metalcore"
+	},
+	{
+		"genre" : "metropopolis"
+	},
+	{
+		"genre" : "miami hip hop"
+	},
+	{
+		"genre" : "minneapolis indie"
+	},
+	{
+		"genre" : "minneapolis sound"
+	},
+	{
+		"genre" : "mississippi indie"
+	},
+	{
+		"genre" : "modern alternative rock"
+	},
+	{
+		"genre" : "modern folk rock"
+	},
+	{
+		"genre" : "modern indie folk"
+	},
+	{
+		"genre" : "modern indie pop"
+	},
+	{
+		"genre" : "modern rock"
+	},
+	{
+		"genre" : "nashville indie"
+	},
+	{
+		"genre" : "neo mellow"
+	},
+	{
+		"genre" : "neo soul"
+	},
+	{
+		"genre" : "neo-classical"
+	},
+	{
+		"genre" : "neo-singer-songwriter"
+	},
+	{
+		"genre" : "neon pop punk"
+	},
+	{
+		"genre" : "new age piano"
+	},
+	{
+		"genre" : "new americana"
+	},
+	{
+		"genre" : "new jersey indie"
+	},
+	{
+		"genre" : "new orleans rap"
+	},
+	{
+		"genre" : "north carolina hip hop"
+	},
+	{
+		"genre" : "north carolina indie"
+	},
+	{
+		"genre" : "nu disco"
+	},
+	{
+		"genre" : "nu metal"
+	},
+	{
+		"genre" : "oakland indie"
+	},
+	{
+		"genre" : "ohio hip hop"
+	},
+	{
+		"genre" : "permanent wave"
+	},
+	{
+		"genre" : "piano rock"
+	},
+	{
+		"genre" : "pixie"
+	},
+	{
+		"genre" : "pop"
+	},
+	{
+		"genre" : "pop dance"
+	},
+	{
+		"genre" : "pop emo"
+	},
+	{
+		"genre" : "pop punk"
+	},
+	{
+		"genre" : "pop r&b"
+	},
+	{
+		"genre" : "pop rap"
+	},
+	{
+		"genre" : "pop rock"
+	},
+	{
+		"genre" : "pop soul"
+	},
+	{
+		"genre" : "post-grunge"
+	},
+	{
+		"genre" : "post-hardcore"
+	},
+	{
+		"genre" : "post-teen pop"
+	},
+	{
+		"genre" : "pov: indie"
+	},
+	{
+		"genre" : "power pop"
+	},
+	{
+		"genre" : "progressive electro house"
+	},
+	{
+		"genre" : "punk"
+	},
+	{
+		"genre" : "r&b"
+	},
+	{
+		"genre" : "rap"
+	},
+	{
+		"genre" : "rap metal"
+	},
+	{
+		"genre" : "rap rock"
+	},
+	{
+		"genre" : "rock"
+	},
+	{
+		"genre" : "screamo"
+	},
+	{
+		"genre" : "shimmer pop"
+	},
+	{
+		"genre" : "singer-songwriter"
+	},
+	{
+		"genre" : "singer-songwriter pop"
+	},
+	{
+		"genre" : "slap house"
+	},
+	{
+		"genre" : "socal pop punk"
+	},
+	{
+		"genre" : "social media pop"
+	},
+	{
+		"genre" : "soulful house"
+	},
+	{
+		"genre" : "south african rock"
+	},
+	{
+		"genre" : "southern hip hop"
+	},
+	{
+		"genre" : "stomp and flutter"
+	},
+	{
+		"genre" : "stomp and holler"
+	},
+	{
+		"genre" : "synth funk"
+	},
+	{
+		"genre" : "talent show"
+	},
+	{
+		"genre" : "teen pop"
+	},
+	{
+		"genre" : "tempe indie"
+	},
+	{
+		"genre" : "tennessee hip hop"
+	},
+	{
+		"genre" : "texas pop punk"
+	},
+	{
+		"genre" : "trap"
+	},
+	{
+		"genre" : "trap latino"
+	},
+	{
+		"genre" : "trap soul"
+	},
+	{
+		"genre" : "uk alternative pop"
+	},
+	{
+		"genre" : "uk pop"
+	},
+	{
+		"genre" : "underground hip hop"
+	},
+	{
+		"genre" : "urban contemporary"
+	},
+	{
+		"genre" : "viral rap"
+	},
+	{
+		"genre" : "viral trap"
+	}
+]
