@@ -25,7 +25,7 @@ class SpotifyDB(object):
         if hasattr(self, "con"):    # self.con not set if connection failed
             self.con.close()
 
-    def insertTrack(self,acousticness,analysis_url,danceability,duration_ms,energy,
+    def insertTracks(self,acousticness,analysis_url,danceability,duration_ms,energy,
                 Id,instrumentalness,music_key,liveness,loudness,mode,name,
                 speechiness,tempo,time_signature,track_href,TYPE,uri,valence):
         command = f"""
@@ -38,7 +38,6 @@ class SpotifyDB(object):
                 %s,{instrumentalness},{music_key},{liveness},{loudness},{mode},%s,
                 {speechiness},{tempo},{time_signature},%s,%s,%s,{valence});
         """
-
         try:
             self.cursor.execute(command, [Id,name,track_href,TYPE,uri])
             self.con.commit()
@@ -47,7 +46,29 @@ class SpotifyDB(object):
                 print("Error adding track " + name + " to database: ")
                 print(e)
 
-    def insertArtist(self,Id,name,href):
+    # takes in json object and unpacks it
+    def tracksImport(self, track):
+        self.insertTracks(track["acousticness"],
+                    track["analysis_url"],
+                    track["danceability"],
+                    track["duration_ms"],
+                    track["energy"],
+                    track["id"],
+                    track["instrumentalness"],
+                    track["music_key"],
+                    track["liveness"],
+                    track["loudness"],
+                    track["mode"],
+                    track["name"],
+                    track["speechiness"],
+                    track["tempo"],
+                    track["time_signature"],
+                    track["track_href"],
+                    track["type"],
+                    track["uri"],
+                    track["valence"])
+
+    def insertArtists(self,Id,name,href):
         command = f"""
             INSERT INTO artists
                 (id,name,href)
@@ -62,7 +83,10 @@ class SpotifyDB(object):
                 print("Error adding artist " + name + " to database:")
                 print(e)
 
-    def insertGenre(self,genre):
+    def artistsImport(self, artist):
+        self.insertArtists(artist["id"], artist["name"], artist["href"])
+
+    def insertGenres(self,genre):
         command = f"""
             INSERT INTO genres
                 (genre)
@@ -76,6 +100,9 @@ class SpotifyDB(object):
             if e.args[0] != 1062:   # duplicate entry
                 print("Error adding genre " + genre + " to database:")
                 print(e)
+
+    def genresImport(self, genre):
+        self.insertGenres(genre["genre"])
 
     def insertArtistToGenre(self,name,genre):
         command = f"""
@@ -91,6 +118,9 @@ class SpotifyDB(object):
             if e.args[0] != 1062:   # duplicate entry
                 print("Error adding mapping for artist " + name + " to " + genre)
                 print(e)
+    
+    def artistToGenreImport(self, data):
+        self.insertArtistToGenre(data["name"], data["genre"])
 
     def insertTrackToGenre(self,name,genre):
         command = f"""
@@ -107,6 +137,8 @@ class SpotifyDB(object):
                 print("Error adding mapping for track " + name + " to " + genre)
                 print(e)
 
+    def trackToGenreImport(self, data):
+        self.insertTrackToGenre(data["name"], data["genre"])
 
     def cleanup(self):
         print("Cleaning up database")
