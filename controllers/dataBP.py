@@ -1,8 +1,8 @@
 from flask import Blueprint, redirect, url_for, render_template
 import requests
 import json
-from model.database import SpotifyDB 
-from model.data_handler import DataHandler
+from models.database import SpotifyDB 
+from models.data_handler import DataHandler
 
 # Setting globals
 db = SpotifyDB()
@@ -45,7 +45,9 @@ def getTracks(playlistId):
         response = makeRequest(url)
         if response != None:
             for item in response["items"]:
-                dataHandler.addTrack(item["track"])
+                track = item["track"]
+                dataHandler.addTrack(track["id"], track["name"])
+                dataHandler.addTrackArtists(track["id"], track["artists"])
             url = response["next"]
         else:
             url = None

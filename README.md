@@ -63,3 +63,6 @@ make sense
 
 Clean up duplicate code in database.py (passing sql command/error message and
 arg list as parameter?)
+
+When do I need to start worrying about memory usage? How many tracks will break
+this?

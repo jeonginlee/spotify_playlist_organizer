@@ -25,6 +25,7 @@ class SpotifyDB(object):
         if hasattr(self, "con"):    # self.con not set if connection failed
             self.con.close()
 
+# INSERT ----------------------------------------------------------------------
     def insertTracks(self,acousticness,analysis_url,danceability,duration_ms,energy,
                 Id,instrumentalness,music_key,liveness,loudness,mode,name,
                 speechiness,tempo,time_signature,track_href,TYPE,uri,valence):
@@ -140,6 +141,22 @@ class SpotifyDB(object):
     def trackToGenreImport(self, data):
         self.insertTrackToGenre(data["name"], data["genre"])
 
+# SELECT ---------------------------------------------------------------------
+
+    def getTrackData(self):
+        command = "SELECT * FROM tracks"
+        try:
+            self.cursor.execute(command)
+            tracks = self.cursor.fetchall()
+            print(f"Got data for {len(tracks)} tracks")
+            return tracks
+        except Exception as e:
+            print("Error getting track data")
+            print(e)
+
+
+
+# Helpers ---------------------------------------------------------------------
     def cleanup(self):
         print("Cleaning up database")
         command = """

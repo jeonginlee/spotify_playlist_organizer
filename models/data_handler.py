@@ -1,4 +1,4 @@
-from model.model import *
+from models.model import *
 
 class DataHandler(object):
     def __init__(self):
@@ -8,12 +8,22 @@ class DataHandler(object):
 
     # Takes in a track object from spotify API response to keep track of 
     #    added tracks and their artsists
-    def addTrack(self, trackObj):
-        track = Track(trackObj["id"], trackObj["name"], trackObj["artists"])
-        self.tracks[track.Id] = track
+    def addTrack(self, Id, name):
+        self.tracks[Id] = Track(Id, name)
 
+    # Adds artist data for each track
+    def addTrackArtists(self, Id, artists):
+        track = self.tracks[Id] 
+        track.addArtists(artists)
         for artist in track.artists:
             self.artists[artist.Id] = artist
+
+    def addTrackData(self,acousticness,analysis_url,danceability,duration_ms,energy,
+                Id,instrumentalness,music_key,liveness,loudness,mode,
+                speechiness,tempo,time_signature,track_href,TYPE,uri,valence):
+        self.tracks[Id].addData(acousticness,analysis_url,danceability,duration_ms,energy,
+                instrumentalness,music_key,liveness,loudness,mode,
+                speechiness,tempo,time_signature,track_href,TYPE,uri,valence)
 
     # Comma deliminated string of track Ids in the 100 track section
     #   Sections are 1 indexed, returns None if beyond size of track array
@@ -29,6 +39,9 @@ class DataHandler(object):
     # Returns Track object by Id
     def getTrackObj(self, Id):
         return self.tracks[Id]
+
+    def getTrackName(self, Id):
+        return self.tracks[Id].name
 
     def getNumTracks(self):
         return len(self.tracks)
