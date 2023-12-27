@@ -43,6 +43,13 @@ class DataHandler(object):
     def getTrackName(self, Id):
         return self.tracks[Id].name
 
+    # Returns a list of track names for display
+    def getTrackNames(self):
+        names = []
+        for track in self.tracks.values():
+            names.append(track.name)
+        return names
+
     def getNumTracks(self):
         return len(self.tracks)
 

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class="container p-5 my-5 bg-dark text-white">
+		<h3>How would you like to start?</h3>
+			<a class="btn btn-outline-light btn-lg" role="button"
+				href="{{ url_for("playlist.listTracks") }}">
+				Pick a seed
+			</a>
+
+			<a class="btn btn-outline-light btn-lg" role="button"
+				href="{{ url_for("playlist.home") }}">
+				Filter by criteria
+			</a>
+	</div>
+
+
+
+{% endblock %}
+

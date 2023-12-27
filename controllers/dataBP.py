@@ -1,14 +1,7 @@
 from flask import Blueprint, redirect, url_for, render_template
 import requests
 import json
-from models.database import SpotifyDB 
-from models.data_handler import DataHandler
-
-# Setting globals
-db = SpotifyDB()
-dataHandler = DataHandler()
-
-spotify_url = "https://api.spotify.com/v1"      # leading url for spotify API
+from extensions import *
 
 # Data endpoints --------------------------------------------------------------
 dataBP = Blueprint('dataBP', __name__, template_folder="templates", url_prefix='/data')
