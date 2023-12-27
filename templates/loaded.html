@@ -2,9 +2,13 @@
 {% block content %}
 
 	<div class="container p-5 my-5 bg-dark text-white">
-		<h3>Your library has been loaded.</h3>
+		<h3>Your tracks have been loaded.</h3>
 		<p>We found {{numTracks}} songs in your playlists.</p>
 		<p>Thanks for your free data bitch &#128540;</p>
+		<a class="btn btn-outline-light btn-lg" role="button"
+			href="{{ url_for("dataBP.home") }}">
+			Add more tracks?
+		</a>
 	</div>
 	
 

@@ -16,6 +16,11 @@ dataBP = Blueprint('dataBP', __name__, template_folder="templates", url_prefix='
 def setToken(auth_token):
     global token
     token = auth_token
+
+    return redirect(url_for('dataBP.home'))
+
+@dataBP.route('/home')
+def home():
     return render_template('home.html')
 
 @dataBP.route('/getPlaylists')

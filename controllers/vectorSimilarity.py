@@ -12,7 +12,10 @@ from data_handler import DataHandler
 db = SpotifyDB()
 data = DataHandler()
 
-def getSimilarity():
+import argparse
+
+
+def loadTrackData():
     trackData = db.getTrackData()
     tracks = {}
     for track in trackData:
@@ -28,11 +31,23 @@ def getSimilarity():
         
         # Convert to array and map it
         tracks[Id] = np.array([danceability, energy, valence])
+    
+    return tracks
 
+def euclideanDist(tracks, targetId):
+    target = tracks[targetId] 
+    distances = {}
+    for testId in tracks:
+        score = np.linalg.norm(target - tracks[testId])
+        distances[score] = testId
+    
+    sortedDist = sorted(distances.keys())
+    for dist in sortedDist:
+        print(f"Name: {data.getTrackName(distances[dist])}")
+        print(f"\tDist: {dist}")
+    
 
-    # testing with track "If you love me" since R&B should be easy to find
-    # similar songs for
-    targetId = "0BTGqPIW9acmhhUmENkq5r" 
+def cosineSim(tracks, targetId):
     normTarget = np.linalg.norm(tracks[targetId])
     simScores = {}
     for testId in tracks:
@@ -54,4 +69,21 @@ def getSimilarity():
 
 
 if __name__ == "__main__":
-    getSimilarity()
+    parser = argparse.ArgumentParser()
+    helpText = '''
+        Method used to calculate similarity score.
+        'e' for Euclidean distance 
+        'c' for cosine similarity
+    '''
+    parser.add_argument('--method', '-m', default='c', help=helpText, required=True)
+    args = parser.parse_args()
+
+    targetId = "5qW6ZYct54PhKliCntyxRX" # cover me up jason isbell
+    tracks = loadTrackData()
+
+    if args.method == 'c':
+        cosineSim(tracks, targetId) 
+    elif args.method == 'e':
+        euclideanDist(tracks, targetId)
+    else:
+        raise Exception("Invalid method chosen.")
