@@ -4,10 +4,10 @@
 	<div class="container p-5 my-5 bg-dark text-white">
 		<h3>Select a track as a seed for recommendations:</h3>
 		<div class="list-group">
-			{% for name in tracks %}
-			<a href="{{ url_for("playlist.listTracks") }}" 
+			{% for track in tracks %}
+			<a href="{{ url_for("playlist.generatePlaylist", targetId=track.Id) }}" 
 				class="list-group-item list-group-item-action list-group-item-dark">
-				{{ name }}
+				{{ track.name }}
 			</a>
 			{% endfor %}
 		</div>

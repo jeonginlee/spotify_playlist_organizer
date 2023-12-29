@@ -21,7 +21,6 @@ token_url = "https://accounts.spotify.com/api/token"
 authorize = Blueprint('authorize', __name__, template_folder="templates", url_prefix='/authorize')
 @authorize.route('/')
 def start():
-    print("starting")
     scope = "user-library-read playlist-read-private"
     auth_headers = {
         "client_id": client_id,
